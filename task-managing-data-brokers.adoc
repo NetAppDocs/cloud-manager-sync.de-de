@@ -1,0 +1,294 @@
+---
+sidebar: sidebar 
+permalink: task-managing-data-brokers.html 
+keywords: manage data brokers, manage data broker groups, data broker performance, data broker configuration, data broker removal, remove data broker, delete data broker, groups, data broker group, rename data broker group, add data broker, data broker cpu, data broker ram, data broker status, edit group name, change group name, modify group name 
+summary: Ein Daten-Broker synchronisiert Daten von einem Quellspeicherort an einem Zielspeicherort. Für jede von Ihnen erstellte Sync-Beziehung ist ein Daten-Broker erforderlich. Managen Sie Datenvermittler, indem Sie einer Gruppe einen neuen Daten-Broker hinzufügen, indem Sie Informationen zu Datenvermittlern anzeigen – und vieles mehr. 
+---
+= Managen von Daten-Broker-Gruppen
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Eine Daten-Broker-Gruppe synchronisiert Daten von einem Quellspeicherort an einem Zielspeicherort. Für jede von Ihnen erstellte Synchronisierungsbeziehung ist mindestens ein Datenvermittler in einer Gruppe erforderlich. Managen Sie Daten-Broker-Gruppen, indem Sie einer Gruppe einen neuen Daten-Broker hinzufügen, Informationen zu Gruppen anzeigen und mehr.
+
+
+
+== Funktionsweise von Data Broker-Gruppen
+
+Eine Datenmaklergruppe kann einen oder mehrere Datenvermittler enthalten. Das Zusammenführen von Datenmaklern kann zur Verbesserung der Performance von Synchronisierungsbeziehungen beitragen.
+
+
+
+=== Gruppen können mehrere Beziehungen verwalten
+
+Eine Gruppe von Daten-Brokergruppen kann eine oder mehrere Synchronisierungsbeziehungen gleichzeitig managen.
+
+Nehmen wir zum Beispiel an, Sie haben drei Beziehungen:
+
+* Beziehung 1 wird von Datenmaklergruppe A gemanagt
+* Beziehung 2 wird von Datenmakler Gruppe B verwaltet
+* Beziehung 3 wird von Datenmaklergruppe A gemanagt
+
+
+Sie möchten die Performance von Beziehung 1 steigern, damit Sie der Datenmakler-Gruppe A einen neuen Makler hinzufügen Da Gruppe A auch die Synchronisierungsbeziehung 3 verwaltet, wird auch die Sync-Performance für eine Beziehung automatisch beschleunigt.
+
+
+
+=== Anzahl der Datenmakler in einer Gruppe
+
+In vielen Fällen kann ein einzelner Daten-Broker die Performance-Anforderungen für eine Synchronisierungsbeziehung erfüllen. Wenn es nicht, können Sie die Sync-Leistung beschleunigen, indem Sie zusätzliche Datenmakler zur Gruppe. Sie sollten jedoch zunächst andere Faktoren prüfen, die sich auf die Synchronisierungsleistung auswirken können. link:faq.html#how-many-data-brokers-are-required-in-a-group["Erfahren Sie, wie Sie feststellen können, wann mehrere Datenvermittler erforderlich sind"].
+
+
+
+== Sicherheitsempfehlungen
+
+Um die Sicherheit Ihres Data Broker-Rechners zu gewährleisten, empfiehlt NetApp Folgendes:
+
+* SSH sollte X11-Weiterleitung nicht zulassen
+* SSH sollte die TCP-Verbindungsweiterleitung nicht zulassen
+* SSH sollte keine Tunnel zulassen
+* SSH sollte keine Client-Umgebungsvariablen akzeptieren
+
+
+Diese Sicherheitsempfehlungen können dazu beitragen, unbefugte Verbindungen zum Computer des Datenmakers zu verhindern.
+
+
+
+== Fügen Sie einer Gruppe einen neuen Datenvermittler hinzu
+
+Es gibt verschiedene Möglichkeiten zur Erstellung eines neuen Daten-Brokers:
+
+* Beim Erstellen einer neuen Synchronisierungsbeziehung
++
+link:task-creating-relationships.html["Erfahren Sie, wie Sie bei der Erstellung einer Synchronisierungsbeziehung einen neuen Daten-Broker erstellen"].
+
+* Klicken Sie auf der Seite *Data Brokers verwalten* auf *Neuen Daten-Broker hinzufügen*, der den Daten-Broker in einer neuen Gruppe erstellt
+* Erstellen Sie auf der Seite *Data Brokers* einen neuen Datenmakler in einer vorhandenen Gruppe
+
+
+.Bevor Sie beginnen
+* Sie können keine Datenvermittler zu einer Gruppe hinzufügen, die eine verschlüsselte Synchronisierungsbeziehung verwaltet.
+* Wenn Sie einen Daten-Broker in einer vorhandenen Gruppe erstellen möchten, muss sich der Daten-Broker vor Ort oder ähnlich wie ein Daten-Broker einsetzen.
++
+Wenn eine Gruppe beispielsweise einen AWS-Datenmanager enthält, können Sie einen AWS-Daten-Broker oder On-Premises-Daten-Broker in dieser Gruppe erstellen. Es kann kein Azure Daten-Broker oder Google Cloud Daten-Broker erstellt werden, da dieser nicht der gleiche Typ von Daten-Broker ist.
+
+
+
+.Schritte zum Erstellen eines Daten-Brokers in einer neuen Gruppe
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie Auf *Neuen Daten-Broker Hinzufügen*.
+. Befolgen Sie die Anweisungen, um den Daten-Broker zu erstellen.
++
+Hilfe finden Sie auf den folgenden Seiten:
+
++
+** link:task-installing-aws.html["Erstellen eines Daten-Brokers in AWS"]
+** link:task-installing-azure.html["Erstellen eines Daten-Brokers in Azure"]
+** link:task-installing-gcp.html["Erstellen Sie in Google Cloud einen Daten-Broker"]
+** link:task-installing-linux.html["Installation des Data Brokers auf einem Linux-Host"]
+
+
+
+
+.Schritte zum Erstellen eines Daten-Brokers in einer vorhandenen Gruppe
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie auf das Aktionsmenü und wählen Sie *Data Broker hinzufügen*.
++
+image:screenshot_sync_group_add.png["Ein Screenshot des Aktionsmenüs, das für jeden einzelnen Datenmakler in einer Gruppe verfügbar ist."]
+
+. Befolgen Sie die Anweisungen, um den Daten-Broker in der Gruppe zu erstellen.
++
+Hilfe finden Sie auf den folgenden Seiten:
+
++
+** link:task-installing-aws.html["Erstellen eines Daten-Brokers in AWS"]
+** link:task-installing-azure.html["Erstellen eines Daten-Brokers in Azure"]
+** link:task-installing-gcp.html["Erstellen Sie in Google Cloud einen Daten-Broker"]
+** link:task-installing-linux.html["Installation des Data Brokers auf einem Linux-Host"]
+
+
+
+
+
+
+== Den Namen einer Gruppe bearbeiten
+
+Ändern Sie jederzeit den Namen einer Datenmaklergruppe.
+
+.Schritte
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie auf das Aktivitätsmenü und wählen Sie *Gruppenname bearbeiten*.
++
+image:screenshot_sync_group_edit.gif["Ein Screenshot des Aktionsmenüs, das für jeden einzelnen Datenmakler in einer Gruppe verfügbar ist."]
+
+. Geben Sie einen neuen Namen ein und klicken Sie auf *Speichern*.
+
+
+Cloud Sync aktualisiert den Namen der Gruppe des Daten-Brokers.
+
+
+
+== Einrichten einer Unified-Konfiguration
+
+Wenn eine Synchronisierungsbeziehung während des Synchronisierungsprozesses Fehler auffindet, kann durch die Vereinheitlichung der Parallelität der Datenmaklergruppe die Anzahl der Synchronisierungsfehler verringert werden. Beachten Sie, dass Änderungen an der Konfiguration der Gruppe die Leistung beeinträchtigen können, indem Sie die Übertragung verlangsamen.
+
+Es wird nicht empfohlen, die Konfiguration selbst zu ändern. Sie sollten sich mit NetApp beraten lassen, um zu erfahren, wann die Konfiguration geändert werden kann und wie Sie sie ändern können.
+
+.Schritte
+. Klicken Sie Auf *Data Brokers Verwalten*.
+. Klicken Sie auf das Symbol Einstellungen für eine Datenmaklergruppe.
++
+image:screenshot_sync_group_settings.png["Ein Screenshot, in dem das Symbol Einstellungen für eine Datenmaklergruppe angezeigt wird."]
+
+. Ändern Sie die Einstellungen nach Bedarf und klicken Sie dann auf *Konfiguration vereinheitlichen*.
++
+Beachten Sie Folgendes:
+
++
+** Sie können festlegen, welche Einstellungen geändert werden sollen. Sie müssen nicht alle vier gleichzeitig ändern.
+** Nachdem eine neue Konfiguration an einen Daten-Broker gesendet wurde, wird der Daten-Broker automatisch neu gestartet und verwendet die neue Konfiguration.
+** Es kann bis zu einer Minute dauern und ist in der Cloud Sync-Oberfläche sichtbar.
+** Wenn kein Daten-Broker ausgeführt wird, ändert sich die Konfiguration nicht, da Cloud Sync nicht mit ihm kommunizieren kann. Die Konfiguration ändert sich, nachdem der Daten-Broker neu gestartet wurde.
+** Nachdem Sie eine einheitliche Konfiguration festgelegt haben, werden alle neuen Datenvermittler automatisch die neue Konfiguration verwenden.
+
+
+
+
+
+
+== Verschieben von Datenmaklern zwischen Gruppen
+
+Verschieben Sie einen Datenvermittler von einer Gruppe in eine andere Gruppe, wenn Sie die Performance der Ziel-Daten-Broker-Gruppe beschleunigen müssen.
+
+Wenn ein Daten-Broker beispielsweise keine Synchronisierungsbeziehungen mehr verwaltet, können Sie ihn problemlos zu einer anderen Gruppe verschieben, die Synchronisierungsbeziehungen managt.
+
+.Einschränkungen
+* Wenn eine Datenvermittler-Gruppe eine Synchronisierungsbeziehung verwaltet und es sich nur um einen Datenmakler in der Gruppe handelt, können Sie diesen Datenmanager nicht in eine andere Gruppe verschieben.
+* Sie können einen Daten-Broker nicht in eine Gruppe verschieben oder aus einer Gruppe, die verschlüsselte Synchronisierungsbeziehungen verwaltet.
+* Sie können einen derzeit implementierten Daten-Broker nicht verschieben.
+
+
+.Schritte
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie Auf image:screenshot_sync_group_expand.gif["Ein Screenshot der Schaltfläche, mit dem Sie die Liste der Datenmakler in einer Gruppe erweitern können."] So erweitern Sie die Liste der Datenmakler in einer Gruppe.
+. Klicken Sie auf das Aktionsmenü für einen Datenmakler und wählen Sie *Daten-Broker verschieben*.
++
+image:screenshot_sync_group_remove.png["Ein Screenshot des Aktionsmenüs, das für jede einzelne Datenmaklergruppe verfügbar ist."]
+
+. Erstellen Sie eine neue Datenvermittler-Gruppe oder wählen Sie eine vorhandene Datenmaklergruppe aus.
+. Klicken Sie Auf *Verschieben*.
+
+
+Cloud Sync verschiebt den Daten-Broker in eine neue oder vorhandene Daten-Broker-Gruppe. Wenn in der vorherigen Gruppe keine anderen Datenmakler vorhanden sind, wird sie von Cloud Sync gelöscht.
+
+
+
+== Proxy-Konfiguration aktualisieren
+
+Aktualisieren Sie die Proxykonfiguration für einen Datenmanager, indem Sie Details zu einer neuen Proxykonfiguration hinzufügen oder die vorhandene Proxykonfiguration bearbeiten.
+
+.Schritte
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie Auf image:screenshot_sync_group_expand.gif["Ein Screenshot der Schaltfläche, mit dem Sie die Liste der Datenmakler in einer Gruppe erweitern können."] So erweitern Sie die Liste der Datenmakler in einer Gruppe.
+. Klicken Sie auf das Aktionsmenü für einen Datenmakler und wählen Sie *Proxy-Konfiguration bearbeiten*.
+. Geben Sie Details zum Proxy an: Host-Name, Port-Nummer, Benutzername und Passwort.
+. Klicken Sie Auf *Aktualisieren*.
+
+
+Cloud Sync aktualisiert den Datenvermittler, um die Proxy-Konfiguration für den Internetzugang zu verwenden.
+
+
+
+== Zeigen Sie die Konfiguration eines Datenmakers an
+
+Unter Umständen möchten Sie Details zu einem Datenvermittler anzeigen, um beispielsweise den Hostnamen, die IP-Adresse, die verfügbare CPU und den verfügbaren RAM zu identifizieren.
+
+Cloud Sync stellt folgende Details zu einem Daten-Broker bereit:
+
+* Grundinformationen: Instanz-ID, Hostname etc
+* Netzwerk: Region, Netzwerk, Subnetz, private IP, etc
+* Software: Linux Distribution, Data Broker Version, etc
+* Hardware: CPU und RAM
+* Konfiguration: Details über die zwei Arten von Hauptprozessen des Datenmaklers: Scanner und Transferrer
++
+
+TIP: Der Scanner scannt die Quelle und das Ziel und entscheidet, was kopiert werden soll. Der Transferrer führt das eigentliche Kopieren durch. Die Mitarbeiter von NetApp schlagen möglicherweise anhand dieser Konfigurationsdetails Maßnahmen zur Optimierung der Performance vor.
+
+
+
+.Schritte
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie Auf image:screenshot_sync_group_expand.gif["Ein Screenshot der Schaltfläche, mit dem Sie die Liste der Datenmakler in einer Gruppe erweitern können."] So erweitern Sie die Liste der Datenmakler in einer Gruppe.
+. Klicken Sie Auf image:screenshot_sync_group_expand.gif["Ein Screenshot der Schaltfläche, mit der Sie Details zu einem Datenmanager erweitern können."] Um Details zu einem Datenvermittler anzuzeigen.
++
+image:screenshot_sync_data_broker_details.gif["Ein Screenshot mit Informationen zu einem Datenmanager."]
+
+
+
+
+
+== Behebung von Problemen mit einem Daten-Broker
+
+Cloud Sync zeigt für jeden Daten-Broker einen Status an, der Sie bei der Behebung von Problemen unterstützt.
+
+.Schritte
+. Identifizieren Sie alle Datenvermittler mit dem Status „Unbekannt“ oder „Fehlgeschlagen“.
++
+image:screenshot_sync_broker_status.gif["Ein Screenshot des Cloud Sync-Status wird angezeigt, in dem der Daten-Broker den Status „unbekannt“ hat."]
+
+. Fahren Sie mit dem Mauszeiger auf image:screenshot_sync_status_icon.gif["Ein Info-Symbol."] Symbol, um den Fehlergrund anzuzeigen.
+. Korrigieren Sie das Problem.
++
+Möglicherweise müssen Sie den Daten-Broker einfach neu starten, falls er offline ist, oder Sie müssen den Daten-Broker entfernen, wenn die ursprüngliche Implementierung gescheitert ist.
+
+
+
+
+
+== Entfernen Sie einen Datenmanager aus einer Gruppe
+
+Möglicherweise entfernen Sie einen Daten-Broker aus einer Gruppe, wenn dieser nicht mehr benötigt wird oder wenn die ursprüngliche Bereitstellung fehlgeschlagen ist. Durch diese Aktion wird nur der Daten-Broker aus den Datensätzen von Cloud Sync gelöscht. Der Daten-Broker und alle zusätzlichen Cloud-Ressourcen müssen manuell gelöscht werden.
+
+.Dinge, die Sie wissen sollten
+* Cloud Sync löscht eine Gruppe, wenn Sie den letzten Daten-Broker aus der Gruppe entfernen.
+* Sie können den letzten Datenmanager nicht aus einer Gruppe entfernen, wenn eine Beziehung mit dieser Gruppe besteht.
+
+
+.Schritte
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie Auf image:screenshot_sync_group_expand.gif["Ein Screenshot der Schaltfläche, mit dem Sie die Liste der Datenmakler in einer Gruppe erweitern können."] So erweitern Sie die Liste der Datenmakler in einer Gruppe.
+. Klicken Sie auf das Aktionsmenü für einen Datenmanager und wählen Sie *Data Broker entfernen*.
++
+image:screenshot_sync_group_remove.gif["Ein Screenshot des Aktionsmenüs, das für jede einzelne Datenmaklergruppe verfügbar ist."]
+
+. Klicken Sie Auf *Data Broker Entfernen*.
+
+
+Cloud Sync entfernt den Daten-Broker aus der Gruppe.
+
+
+
+== Löschen einer Datenmaklergruppe
+
+Wenn eine Datenvermittlungsgruppe keine Synchronisierungsbeziehungen mehr verwaltet, können Sie die Gruppe löschen, die alle Datenmanager aus Cloud Sync entfernt.
+
+Datenvermittler, die von Cloud Sync entfernt werden, werden nur aus den Aufzeichnungen von Cloud Sync gelöscht. Sie müssen die Instanz des Daten-Brokers manuell bei Ihrem Cloud-Provider sowie allen zusätzlichen Cloud-Ressourcen löschen.
+
+.Schritte
+. Klicken Sie Auf *Sync > Manage Data Brokers*.
+. Klicken Sie auf das Aktionsmenü und wählen Sie *Gruppe löschen*.
++
+image:screenshot_sync_group_add.png["Ein Screenshot des Aktionsmenüs, das für jeden einzelnen Datenmakler in einer Gruppe verfügbar ist."]
+
+. Geben Sie zur Bestätigung den Namen der Gruppe ein und klicken Sie auf *Gruppe löschen*.
+
+
+Cloud Sync entfernt die Datenmakler und löscht die Gruppe.

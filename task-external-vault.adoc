@@ -1,0 +1,264 @@
+---
+sidebar: sidebar 
+permalink: task-external-vault.html 
+keywords: hashicorp, vault, credentials, secrets, API 
+summary: Wenn Sie eine Synchronisierungsbeziehung erstellen, die Amazon S3, Azure oder Google Cloud Zugangsdaten erfordert, müssen Sie diese Anmeldedaten über die Cloud Sync Benutzeroberfläche oder die API angeben. Alternativ kann der Daten-Broker eingerichtet werden, um direkt von einem externen HashiCorp Vault auf die Zugangsdaten zuzugreifen. 
+---
+= Einrichtung einer Datenvermittler-Gruppe zur Verwendung eines externen HashiCorp Vault
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Wenn Sie eine Synchronisierungsbeziehung erstellen, die Amazon S3, Azure oder Google Cloud Zugangsdaten erfordert, müssen Sie diese Anmeldedaten über die Cloud Sync Benutzeroberfläche oder die API angeben. Alternativ kann die Gruppe für den Datenvermittler eingerichtet werden, um direkt von einem externen HashiCorp Vault auf die Anmeldeinformationen (oder _Secrets_) zuzugreifen.
+
+Diese Funktion wird durch die Cloud Sync-API für Synchronisierungsbeziehungen unterstützt, für die Amazon S3, Azure oder Google Cloud Anmeldedaten erforderlich sind.
+
+[role="quick-margin-para"]
+Bereiten Sie den Tresor so vor, dass er die Anmeldeinformationen der Datenmaklergruppe durch Einrichten der URLs bereitstellen kann. Die URLs zu den Geheimnissen im Tresor müssen mit _Creds_ enden.
+
+[role="quick-margin-para"]
+Bereiten Sie die Datenvermittler-Gruppe so vor, dass sie Anmeldeinformationen aus dem externen Tresor abrufen kann, indem Sie die lokale Konfigurationsdatei für jeden Daten-Broker in der Gruppe ändern.
+
+[role="quick-margin-para"]
+Jetzt, da alles eingerichtet ist, können Sie einen API-Aufruf senden, um eine Synchronisierungsbeziehung zu erstellen, die Ihren Tresor verwendet, um die Geheimnisse zu erhalten.
+
+
+
+== Vorbereiten des Tresors
+
+Sie müssen Cloud Sync mit der URL zu den Geheimnissen in Ihrem Tresor zur Verfügung stellen. Bereiten Sie den Tresor vor, indem Sie diese URLs einrichten. In den Synchronisierungsbeziehungen, die Sie erstellen möchten, müssen Sie URLs für die Anmeldeinformationen für jede Quelle und jedes Ziel einrichten.
+
+Die URL muss wie folgt eingerichtet werden:
+
+`/<path>/<requestid>/<endpoint-protocol>Creds`
+
+Pfad:: Der Präfixpfad zum Geheimnis. Dabei kann es sich um jeden einzigartigen Wert handelt.
+Anforderung-ID:: Eine Anfrage-ID, die Sie generieren müssen. Beim Erstellen der Synchronisierungsbeziehung müssen Sie die ID in einem der Kopfzeilen in der API-POST-Anfrage angeben.
+Endpoint-Protokoll:: Eines der folgenden Protokolle, wie definiert https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["In der Post-Beziehung v2-Dokumentation"^]: S3, AZURE oder GCP (jede muss Großbuchstaben enthalten).
+Creds:: Die URL muss mit _Creds_ enden.
+
+
+
+
+=== Beispiele
+
+In den folgenden Beispielen werden URLs zu Secrets angezeigt.
+
+Beispiel für die vollständige URL und den Pfad für die Quellenanmeldeinformationen:: \http://example.vault.com:8200/my-path/all-secrets/hb312vdasr2/S3Creds
++
+--
+Wie Sie im Beispiel sehen können, lautet der Präfixpfad _/my-path/all-Secrets/_, die Anfragestellnummer lautet _hb312vdasr2_ und der Quellendpunkt ist S3.
+
+--
+Beispiel für die vollständige URL und den Pfad für Zielanmeldeinformationen:: \http://example.vault.com:8200/my-path/all-secrets/n32hcbnejk2/AZURECreds
++
+--
+Der Präfixpfad ist _/my-path/all-Secrets/_, die Anfraget-ID lautet _n32hcbnejk2_ und der Zielendpunkt ist Azure.
+
+--
+
+
+
+
+== Vorbereiten der Gruppe des Datenmaklers
+
+Bereiten Sie die Datenvermittler-Gruppe so vor, dass sie Anmeldeinformationen aus dem externen Tresor abrufen kann, indem Sie die lokale Konfigurationsdatei für jeden Daten-Broker in der Gruppe ändern.
+
+.Schritte
+. SSH zu einem Daten-Broker in der Gruppe.
+. Bearbeiten Sie die Datei local.json, die sich in /opt/netapp/datroker/config befindet.
+. Stellen Sie enable auf *true* ein und setzen Sie die config Parameter Felder unter _External-integrationen.Haschicorp_ wie folgt ein:
++
+Aktiviert::
++
+--
+** Gültige Werte: True/false
+** Typ: Boolesch
+** Standardwert: False
+** Wahr: Der Datenvermittler erhält Geheimnisse von Ihrem eigenen externen HashiCorp Vault
+** False: Der Datenmanager speichert die Zugangsdaten in seinem lokalen Tresor
+
+
+--
+url::
++
+--
+** Typ: Zeichenfolge
+** Wert: Die URL zu Ihrem externen Tresor
+
+
+--
+Pfad::
++
+--
+** Typ: Zeichenfolge
+** Wert: Präfixpfad zum Geheimnis mit Ihren Anmeldeinformationen
+
+
+--
+Ablehnen – nicht autorisiert::
++
+--
+** Legt fest, ob der Datenvermittler nicht autorisierte externe Tresore ablehnen soll
+** Typ: Boolesch
+** Standard: False
+
+
+--
+Auth-Methode::
++
+--
+** Die Authentifizierungsmethode, die der Datenmanager für den Zugriff auf Anmeldeinformationen aus dem externen Tresor verwenden sollte
+** Typ: Zeichenfolge
+** Gültige Werte: „Aws-iam“ / „Role-App“ / „gcp-iam“
+
+
+--
+Rollenname::
++
+--
+** Typ: Zeichenfolge
+** Rollenname (falls Sie AWS-iam oder gcp-iam verwenden)
+
+
+--
+Secretid & rootid::
++
+--
+** Typ: String (falls Sie App-Rolle verwenden)
+
+
+--
+Namespace::
++
+--
+** Typ: Zeichenfolge
+** Namespace (X-Vault-Namespace Header, falls erforderlich)
+
+
+--
+
+
+. Wiederholen Sie diese Schritte für alle anderen Datenmakler in der Gruppe.
+
+
+
+
+=== Beispiel für die Authentifizierung der AWS-Rolle
+
+[source, json]
+----
+{
+          “external-integrations”: {
+                  “hashicorp”: {
+                         “enabled”: true,
+                         “url”: “https://example.vault.com:8200”,
+                         “path”: ““my-path/all-secrets”,
+                         “reject-unauthorized”: false,
+                         “auth-method”: “aws-role”,
+                         “aws-role”: {
+                               “role-name”: “my-role”
+                         }
+                }
+       }
+}
+----
+
+
+=== Beispiel für die gcp-iam-Authentifizierung
+
+[source, json]
+----
+{
+"external-integrations": {
+    "hashicorp": {
+      "enabled": true,
+      "url": http://ip-10-20-30-55.ec2.internal:8200,
+      "path": "v1/secret",
+      "namespace": "",
+      "reject-unauthorized": true,
+      "auth-method": "gcp-iam",
+      "aws-iam": {
+        "role-name": ""
+      },
+      "app-role": {
+        "root_id": "",
+        "secret_id": ""
+      },
+"gcp-iam": {
+          "role-name": "my-iam-role"
+      }
+    }
+  }
+}
+----
+
+
+=== Einrichten von Berechtigungen bei Verwendung der gcp-iam-Authentifizierung
+
+Wenn Sie die _gcp-iam_-Authentifizierungsmethode verwenden, muss der Daten-Broker die folgende GCP-Berechtigung haben:
+
+[source, yaml]
+----
+- iam.serviceAccounts.signJwt
+----
+link:task-installing-gcp.html#permissions-required-for-the-service-account["Erfahren Sie mehr über die GCP-Berechtigungsanforderungen für den Daten-Broker"].
+
+
+
+== Erstellen einer neuen Synchronisierungsbeziehung unter Verwendung von Secrets aus dem Tresor
+
+Jetzt, da alles eingerichtet ist, können Sie einen API-Aufruf senden, um eine Synchronisierungsbeziehung zu erstellen, die Ihren Tresor verwendet, um die Geheimnisse zu erhalten.
+
+Posten Sie die Beziehung mit der Cloud Sync REST API.
+
+....
+Headers:
+Authorization: Bearer <user-token>
+Content-Type: application/json
+x-account-id: <accountid>
+x-netapp-external-request-id-src: request ID as part of path for source credentials
+x-netapp-external-request-id-trg: request ID as part of path for target credentials
+Body: post relationship v2 body
+....
+* Um ein Benutzer-Token und Ihre BlueXP-Konto-ID zu erhalten, link:api-sync.html["Lesen Sie diese Seite in der Dokumentation"].
+* Um einen Körper für Ihre Post-Beziehung aufzubauen, https://api.cloudsync.netapp.com/docs/#/Relationships-v2/post_relationships_v2["Siehe den Relationships-v2-API-Aufruf"^].
+
+
+
+
+=== Beispiel
+
+Beispiel für DIE POST-Anforderung:
+
+[source, json]
+----
+url: https://api.cloudsync.netapp.com/api/relationships-v2
+headers:
+"x-account-id": "CS-SasdW"
+"x-netapp-external-request-id-src": "hb312vdasr2"
+"Content-Type": "application/json"
+"Authorization": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik…"
+Body:
+{
+"dataBrokerId": "5e6e111d578dtyuu1555sa60",
+"source": {
+        "protocol": "s3",
+        "s3": {
+                "provider": "sgws",
+                "host": "1.1.1.1",
+                "port": "443",
+                "bucket": "my-source"
+     },
+"target": {
+        "protocol": "s3",
+        "s3": {
+                "bucket": "my-target-bucket"
+        }
+    }
+}
+----

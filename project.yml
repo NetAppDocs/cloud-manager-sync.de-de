@@ -1,0 +1,113 @@
+---
+settings:
+  name: Cloud Sync
+  platform: cloud
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  rss_page: whats-new.html
+  langs: de-de,us-en,ja-jp,zh-cn,zh-tw,ko-kr,fr-fr
+sidebar:
+  entries:
+  - title: Cloud-Sync-Dokumente
+    url: "/index.html"
+  - title: Versionshinweise
+    entries:
+    - title: Was ist neu
+      url: "/whats-new.html"
+    - title: Einschränkungen
+      url: "/reference-limitations.html"
+  - title: Los geht's
+    entries:
+    - title: Erfahren Sie mehr über Cloud Sync
+      url: "/concept-cloud-sync.html"
+    - title: Schnellstart
+      url: "/task-quick-start.html"
+    - title: Anzeigen von unterstützten Synchronisierungsbeziehungen
+      url: "/reference-supported-relationships.html"
+    - title: Bereiten Sie die Quelle und das Ziel vor
+      url: "/reference-requirements.html"
+    - title: Netzwerkvorbereitung
+      url: "/reference-networking.html"
+    - title: Installieren Sie einen Daten-Broker
+      entries:
+      - title: Installation in AWS
+        url: "/task-installing-aws.html"
+      - title: In Azure installieren
+        url: "/task-installing-azure.html"
+      - title: In Google Cloud installieren
+        url: "/task-installing-gcp.html"
+      - title: Installation auf einem Linux-Host
+        url: "/task-installing-linux.html"
+  - title: Verwenden Sie Cloud Sync
+    entries:
+    - title: Daten zwischen Quelle und Ziel synchronisieren
+      entries:
+      - title: Erstellen einer Synchronisierungsbeziehung
+        url: "/task-creating-relationships.html"
+      - title: Kopieren von ACLs aus einer SMB-Freigabe
+        url: "/task-copying-acls.html"
+      - title: Verschlüsselung von aktiven NFS-Daten
+        url: "/task-nfs-encryption.html"
+      - title: Nutzen Sie die Geheimnisse von HashiCorp Vault
+        url: "/task-external-vault.html"
+    - title: Lizenzierung einrichten
+      url: "/task-licensing.html"
+    - title: Synchronisierungsbeziehungen verwalten
+      url: "/task-managing-relationships.html"
+    - title: Managen von Datenmaklern
+      url: "/task-managing-data-brokers.html"
+    - title: Anzeigen von Berichten zur Anpassung der Konfiguration
+      url: "/task-managing-reports.html"
+    - title: Deinstallieren Sie einen Datenvermittler
+      url: "/task-uninstalling.html"
+  - title: Mit DER REST-API automatisieren
+    url: "/api-sync.html"
+  - title: Konzepte
+    entries:
+    - title: Lizenzierung
+      url: "/concept-licensing.html"
+    - title: Datenschutz
+      url: "/concept-privacy.html"
+    - title: Häufig gestellte Fragen
+      url: "/faq.html"
+  - title: Wissen und Support
+    entries:
+    - title: Für den Support anmelden
+      url: "/task-support-registration.html"
+    - title: Holen Sie sich Hilfe
+      url: "/task-get-help.html"
+  - title: Rechtliche Hinweise
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Übersicht über Cloud Sync
+      url: concept-cloud-sync.html
+    - title: Schnellstart
+      url: task-quick-start.html
+    - title: Häufig gestellte Fragen
+      url: faq.html
+  - title: Verwenden Sie Cloud Sync
+    links:
+    - title: Erstellen einer Synchronisierungsbeziehung
+      url: task-creating-relationships.html
+    - title: Lizenzierung einrichten
+      url: task-licensing.html
+    - title: Managen von Daten-Broker-Gruppen
+      url: task-managing-data-brokers.html
+  - title: Blogs Community
+    links:
+    - title: NetApp Community
+      url: https://community.netapp.com/t5/Cloud-Data-Services/ct-p/CDS
+    - title: BlueXP-Blog
+      url: https://cloud.netapp.com/blog
+    - title: Cloud-Webinare
+      url: https://cloud.netapp.com/events
+product-family:
+  name: BlueXP
+  repo: cloud-manager-family
+  sidebar_label: Alle BlueXP-Dokumentationen

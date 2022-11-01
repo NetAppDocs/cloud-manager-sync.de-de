@@ -1,0 +1,169 @@
+---
+sidebar: sidebar 
+permalink: task-installing-gcp.html 
+keywords: data broker, install, gcp, google, networking, permissions, regions, install data broker in gcp, install in gcp, deploy in gcp, deploy data broker in gcp, install data broker in google, install in google, deploy in google, deploy data broker in google, networking requirements, port, ports, 443, port 443, ntp, network time protocol, gcp data broker, service account 
+summary: Wenn Sie einen neuen Daten-Broker erstellen, wählen Sie die Option Google Cloud Data Broker, um die Software für Daten in einer neuen Virtual Machine Instanz in einer VPC zu implementieren. Cloud Sync führt Sie durch den Installationsprozess, aber die Anforderungen und Schritte werden auf dieser Seite wiederholt, um Sie bei der Vorbereitung auf die Installation zu unterstützen. 
+---
+= Entwicklung eines neuen Daten-Brokers in Google Cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Wenn Sie eine neue Gruppe für Daten-Broker erstellen, wählen Sie Google Cloud Platform, um die Software für Daten-Broker auf einer neuen VM-Instanz in Google Cloud VPC zu implementieren. Cloud Sync führt Sie durch den Installationsprozess, aber die Anforderungen und Schritte werden auf dieser Seite wiederholt, um Sie bei der Vorbereitung auf die Installation zu unterstützen.
+
+Sie haben auch die Möglichkeit, den Data Broker auf einem vorhandenen Linux-Host in der Cloud oder vor Ort zu installieren. link:task-installing-linux.html["Weitere Informationen ."].
+
+
+
+== Unterstützte Google Cloud Regionen
+
+Alle Regionen werden unterstützt.
+
+
+
+== Root-Berechtigungen
+
+Die Software für den Datenvermittler wird automatisch als Root auf dem Linux-Host ausgeführt. Root-Vorgänge sind eine Anforderung für den Einsatz eines Daten-Brokers. Beispielsweise zum Mounten von Freigaben.
+
+
+
+== Netzwerkanforderungen
+
+* Der Daten-Broker benötigt eine ausgehende Internetverbindung, damit er den Cloud Sync Service für Aufgaben über Port 443 abfragen kann.
++
+Wenn Cloud Sync den Datenmanager in Google Cloud implementiert, wird eine Sicherheitsgruppe erstellt, die die erforderliche ausgehende Kommunikation ermöglicht.
+
++
+Wenn Sie die ausgehende Verbindung begrenzen müssen, lesen Sie link:reference-networking.html["Die Liste der Endpunkte, die der Datenmanager kontaktiert"].
+
+* NetApp empfiehlt die Konfiguration des Quell-, Ziel- und Daten-Brokers für die Verwendung eines NTP-Services (Network Time Protocol). Die Zeitdifferenz zwischen den drei Komponenten darf 5 Minuten nicht überschreiten.
+
+
+
+
+== Erforderliche Berechtigungen für die Bereitstellung des Daten-Brokers in Google Cloud
+
+Stellen Sie sicher, dass der Google Cloud-Benutzer, der den Daten-Broker bereitstellt, die folgenden Berechtigungen hat:
+
+[source, yaml]
+----
+- compute.networks.list
+- compute.regions.list
+- deploymentmanager.deployments.create
+- deploymentmanager.deployments.delete
+- deploymentmanager.operations.get
+- iam.serviceAccounts.list
+----
+
+
+== Für das Servicekonto erforderliche Berechtigungen
+
+Wenn Sie den Datenvermittler bereitstellen, müssen Sie ein Servicekonto mit den folgenden Berechtigungen auswählen:
+
+[source, yaml]
+----
+- logging.logEntries.create
+- resourcemanager.projects.get
+- storage.buckets.get
+- storage.buckets.list
+- storage.objects.create
+- storage.objects.delete
+- storage.objects.get
+- storage.objects.getIamPolicy
+- storage.objects.list
+- storage.objects.setIamPolicy
+- storage.objects.update
+- iam.serviceAccounts.signJwt
+- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update
+----
+Hinweise:
+
+. Die Berechtigung „iam.serviceAccounts.signJwt"“ ist nur erforderlich, wenn Sie planen, den Datenbroker zur Nutzung eines externen HashiCorp Tresors einzurichten.
+. Die Berechtigungen „pubsub.*“ und „Storage.Buckets.Update“ sind nur erforderlich, wenn Sie die Einstellung „Continuous Sync“ bei einer Synchronisierungsbeziehung von Google Cloud Storage zu einem anderen Cloud-Speicherort aktivieren möchten. link:task-creating-relationships.html#settings["Erfahren Sie mehr über die Option Continuous Sync"].
+
+
+
+
+== Erstellen des Daten-Brokers
+
+Es gibt verschiedene Möglichkeiten, einen neuen Daten-Broker zu erstellen. In diesen Schritten wird beschrieben, wie ein Daten-Broker in Google Cloud bei der Erstellung einer Synchronisierungsbeziehung installiert wird.
+
+.Schritte
+. Klicken Sie Auf *Neuen Sync Erstellen*.
+. Wählen Sie auf der Seite *Synchronisierungsbeziehung definieren* eine Quelle und ein Ziel aus und klicken Sie auf *Weiter*.
++
+Führen Sie die Schritte aus, bis Sie die Seite *Data Broker Group* öffnen.
+
+. Klicken Sie auf der Seite *Data Broker Group* auf *Daten Broker erstellen* und wählen Sie dann *Google Cloud Platform* aus.
++
+image:screenshot-google.png["Einen Screenshot der Seite „Data Broker“ mit der Wahl zwischen AWS, Azure, Google Cloud und einem Daten-Broker vor Ort."]
+
+. Geben Sie einen Namen für den Daten-Broker ein und klicken Sie auf *Weiter*.
+. Wenn Sie dazu aufgefordert werden, melden Sie sich bei Ihrem Google-Konto an.
++
+Das Formular ist Eigentum und wird von Google gehostet. Ihre Zugangsdaten werden nicht an NetApp bereitgestellt.
+
+. Wählen Sie ein Projekt- und ein Dienstkonto aus, und wählen Sie dann einen Speicherort für den Datenmanager aus, einschließlich, ob Sie eine öffentliche IP-Adresse aktivieren oder deaktivieren möchten.
++
+Wenn Sie keine öffentliche IP-Adresse aktivieren, müssen Sie im nächsten Schritt einen Proxyserver definieren.
+
++
+image:screenshot_data_broker_gcp.png["Ein Screenshot mit den Informationen, die für die Bereitstellung eines Daten-Brokers in Google Cloud erforderlich sind"]
+
+. Geben Sie eine Proxy-Konfiguration an, wenn ein Proxy für den Internetzugriff in der VPC erforderlich ist.
++
+Wenn ein Proxy für den Internetzugriff benötigt wird, muss sich der Proxy in Google Cloud befinden und dasselbe Dienstkonto wie der Datenvermittler verwenden.
+
+. Sobald der Datenvermittler verfügbar ist, klicken Sie in Cloud Sync auf *Weiter*.
++
+Die Bereitstellung der Instanz dauert etwa 5 bis 10 Minuten. Sie können den Fortschritt des Cloud Sync-Dienstes überwachen, der automatisch aktualisiert wird, wenn die Instanz verfügbar ist.
+
+. Füllen Sie die Seiten im Assistenten aus, um die neue Synchronisierungsbeziehung zu erstellen.
+
+
+Sie haben einen Datenmanager in Google Cloud implementiert und eine neue Synchronisierungsbeziehung erstellt. Sie können diesen Daten-Broker mit zusätzlichen Synchronisierungsbeziehungen verwenden.
+
+
+
+== Bereitstellung von Berechtigungen zur Verwendung von Buckets in anderen Google Cloud-Projekten
+
+Wenn Sie eine Synchronisierungsbeziehung erstellen und Google Cloud Storage als Quelle oder Ziel auswählen, können Sie mit Cloud Sync aus den Buckets auswählen, die für das Service-Konto des Datenmakers berechtigt sind. Dazu gehören standardmäßig die Buckets, die sich im _same_ Projekt befinden wie das Service-Konto des Datenmakers. Sie können jedoch Buckets aus _other_ Projekten auswählen, wenn Sie die erforderlichen Berechtigungen angeben.
+
+.Schritte
+. Öffnen Sie die Konsole der Google Cloud Platform, und laden Sie den Cloud Storage Service.
+. Klicken Sie auf den Namen des Buckets, den Sie in einer Synchronisierungsbeziehung als Quelle oder Ziel verwenden möchten.
+. Klicken Sie Auf *Berechtigungen*.
+. Klicken Sie Auf *Hinzufügen*.
+. Geben Sie den Namen des Dienstkontos des Datenmakers ein.
+. Wählen Sie eine Rolle aus, die bereitgestellt wird  required for the service account,Dieselben Berechtigungen wie oben dargestellt.
+. Klicken Sie Auf *Speichern*.
+
+
+Wenn Sie eine Synchronisierungsbeziehung einrichten, können Sie nun diesen Bucket als Quelle oder Ziel in der Synchronisierungsbeziehung auswählen.
+
+
+
+== Details zur VM-Instanz des Datenmaklers
+
+Cloud Sync erstellt mithilfe der folgenden Konfiguration einen Daten-Broker in Google Cloud.
+
+Maschinentyp:: n2-Standard-4
+VCPUs:: 4
+RAM:: 15 GB
+Betriebssystem:: Red Hat Enterprise Linux 7.7
+Festplattengröße und -Typ:: 20-GB-HDD pd-Standard
+

@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: concept-privacy.html 
+keywords: privacy, data privacy, credentials, access to credentials, hashicorp vault 
+summary: NetApp hat keinen Zugriff auf Ihre Zugangsdaten, die Sie während der Nutzung des Cloud Sync-Dienstes zur Verfügung stellen. Die Anmeldeinformationen werden direkt auf dem Data Broker-Computer in Ihrem Netzwerk gespeichert. 
+---
+= Datenschutz
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp hat keinen Zugriff auf Ihre Zugangsdaten, die Sie während der Nutzung des Cloud Sync-Dienstes zur Verfügung stellen. Die Anmeldeinformationen werden direkt auf dem Data Broker-Computer in Ihrem Netzwerk gespeichert.
+
+Abhängig von der ausgewählten Konfiguration werden Sie möglicherweise von Cloud Sync aufgefordert, Anmeldeinformationen einzugeben, wenn Sie eine neue Beziehung erstellen. Wenn Sie beispielsweise eine Beziehung einrichten, die einen SMB-Server umfasst, oder den Daten-Broker in AWS bereitstellen.
+
+Diese Zugangsdaten werden immer direkt beim Data Broker selbst gespeichert. Der Daten-Broker befindet sich auf einem Rechner im Netzwerk, unabhängig davon, ob er sich vor Ort oder in Ihrem Cloud-Konto befindet. Die Zugangsdaten werden NetApp nie zur Verfügung gestellt.
+
+Die Anmeldedaten werden mithilfe von HashiCorp Vault lokal auf dem Daten-Broker-Rechner verschlüsselt.

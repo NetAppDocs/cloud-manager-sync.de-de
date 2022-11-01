@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: task-uninstalling.html 
+keywords: uninstall, uninstall data broker, remove data broker 
+summary: Führen Sie bei Bedarf ein Deinstallationsskript aus, um den Datenmanager und die Pakete und Verzeichnisse zu entfernen, die bei der Installation des Datenmakers erstellt wurden. 
+---
+= Deinstallieren des Datenmaklers
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Führen Sie bei Bedarf ein Deinstallationsskript aus, um den Daten-Broker und die Pakete und Verzeichnisse zu entfernen, die bei der Installation des Daten-Brokers erstellt wurden.
+
+.Schritte
+. Melden Sie sich beim Host des Datenmakers an.
+. Wechseln Sie in das Verzeichnis des Datenmakers: `/opt/netapp/databroker`
+. Führen Sie folgende Befehle aus:
++
+`chmod +x uninstaller-DataBroker.sh`
+`./uninstaller-DataBroker.sh`
+
+. Drücken Sie ‘y’, um die Deinstallation zu bestätigen.
+

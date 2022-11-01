@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: concept-cloud-sync.html 
+keywords: cloud sync, overview, conceptual, how, data broker, service, cloudsync 
+summary: Der NetApp Cloud Sync Service bietet eine einfache, sichere und automatisierte Möglichkeit zur Migration Ihrer Daten auf beliebige Ziele, in der Cloud oder vor Ort. 
+---
+= Übersicht über Cloud Sync
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Der NetApp Cloud Sync Service bietet eine einfache, sichere und automatisierte Möglichkeit zur Migration Ihrer Daten auf beliebige Ziele, in der Cloud oder vor Ort. Ob es sich um einen dateibasierten NAS-Datensatz (NFS oder SMB), um ein S3-Objektformat (Amazon Simple Storage Service), eine NetApp StorageGRID Appliance oder einen anderen Cloud-Provider-Objektspeicher handelt: Cloud Sync kann diesen für Sie konvertieren und verschieben.
+
+
+
+== Funktionen
+
+Sehen Sie sich das folgende Video an, um einen Überblick über Cloud Sync zu erhalten:
+
+video::oZNJtLvgNfQ[youtube,width=848,height=480]
+
+
+== Funktionsweise von Cloud Sync
+
+Cloud Sync ist eine SaaS-Plattform (Software-as-a-Service), die aus einer Data-Broker-Gruppe, einer Cloud-basierten Schnittstelle, die über BlueXP verfügbar ist, sowie einer Quelle und einem Ziel besteht.
+
+Die folgende Abbildung zeigt die Beziehung zwischen Cloud Sync-Komponenten:
+
+image:diagram_cloud_sync_overview.gif["Konzeptionelles Bild, das den Datenfluss von einer Quelle zu einem Ziel zeigt. Die Data Broker-Software fungiert als Vermittler und fragt den Cloud Sync Service nach Aufgaben ab."]
+
+Die NetApp Daten-Broker Software synchronisiert Daten von einer Quelle zu einem Ziel (dies wird als „_Sync Relationship_“ bezeichnet). Sie können den Data Broker in AWS, Azure, Google Cloud Platform oder vor Ort ausführen. Eine Datenmakler-Gruppe, die aus einem oder mehreren Datenmaklern besteht, benötigt eine ausgehende Internetverbindung über Port 443, damit sie mit dem Cloud Sync-Dienst kommunizieren und einige andere Dienste und Repositories kontaktieren kann. link:reference-networking.html["Zeigen Sie die Liste der Endpunkte an"].
+
+Nach der ersten Kopie synchronisiert der Service alle geänderten Daten auf der Grundlage des von Ihnen festgelegten Zeitplans.
+
+
+
+== Unterstützte Speichertypen
+
+Cloud Sync unterstützt folgende Speichertypen:
+
+* Beliebiger NFS-Server
+* Alle SMB-Server
+* Amazon EFS
+* Amazon FSX für ONTAP
+* Amazon S3
+* Azure Blob
+* Azure Data Lake Storage Gen2
+* Azure NetApp Dateien
+* Box (als Vorschau verfügbar)
+* Cloud Volumes Service
+* Cloud Volumes ONTAP
+* Google Cloud Storage
+* Google Drive
+* IBM Cloud Objekt-Storage
+* On-Premises-ONTAP-Cluster
+* ONTAP S3 Storage
+* SFTP (nur mit API)
+* StorageGRID
+
+
+link:reference-supported-relationships.html["Unterstützte Synchronisierungsbeziehungen anzeigen"].
+
+
+
+== Kosten
+
+Mit der Nutzung von Cloud Sync sind zwei Arten von Kosten verbunden: Ressourcengebühren und Servicegebühren.
+
+Ressourcenkosten:: Die Gebühren für Ressourcen hängen mit den Computing- und Storage-Kosten für die Ausführung eines oder mehrerer Daten-Broker in der Cloud zusammen.
+Servicegebühren:: Es gibt zwei Möglichkeiten, für Synchronisierungsbeziehungen zu bezahlen, nachdem die 14-tägige kostenlose Testversion abgelaufen ist. Als erste Option können Sie AWS oder Azure abonnieren, wodurch Sie stündlich oder jährlich bezahlen können. Die zweite Option besteht darin, Lizenzen direkt von NetApp zu erwerben.
+
+
+link:concept-licensing.html["Funktionsweise der Lizenzierung"].

@@ -1,0 +1,85 @@
+---
+sidebar: sidebar 
+permalink: task-copying-acls.html 
+keywords: permissions, access control list, acls, ntfs, cifs, smb, shares, robocopy, copy, transfer, activate, operating system, os, ram, cpu, networking, copy acls to the target 
+summary: 'Cloud Sync kann Zugriffssteuerungslisten (ACLs) zwischen SMB-Freigaben und zwischen SMB-Freigaben und Objekt-Storage kopieren (außer ONTAP S3). Bei Bedarf haben Sie auch die Möglichkeit, ACLs mithilfe von robocopy manuell zwischen SMB-Freigaben beizubehalten.' 
+---
+= Kopieren von ACLs aus SMB-Freigaben
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Sync kann Zugriffssteuerungslisten (ACLs) zwischen SMB-Freigaben und zwischen SMB-Freigaben und Objekt-Storage kopieren (außer ONTAP S3). Bei Bedarf haben Sie auch die Möglichkeit, ACLs mithilfe von robocopy manuell zwischen SMB-Freigaben beizubehalten.
+
+.Wahlmöglichkeiten
+*  up Cloud Sync to copy ACLs from an SMB server,Richten Sie Cloud Sync so ein, dass ACLs automatisch kopiert werden
+*  copying ACLs between SMB shares,Kopieren Sie die ACLs manuell zwischen SMB-Freigaben
+
+
+
+
+== Einrichten von Cloud Sync zum Kopieren von ACLs
+
+Kopieren Sie ACLs zwischen SMB-Freigaben und zwischen SMB-Freigaben und Objekt-Storage. Aktivieren Sie dazu eine Einstellung beim Erstellen einer Beziehung oder nach dem Erstellen einer Beziehung.
+
+Diese Funktion arbeitet mit jedem Datentyp Broker zusammen – AWS, Azure, Google Cloud Platform oder On-Premises-Daten-Broker. Der On-Premises-Daten-Broker kann ausgeführt werden link:task-installing-linux.html["Alle unterstützten Betriebssysteme"].
+
+.Schritte für eine neue Beziehung
+. Klicken Sie in Cloud Sync auf *Neuen Sync erstellen*.
+. Ziehen Sie einen SMB-Server oder Objekt-Storage als Quelle und einen SMB-Server oder Objekt-Storage als Ziel und klicken Sie auf *Weiter*.
+. Auf der Seite *SMB Server*:
++
+.. Geben Sie einen neuen SMB-Server ein oder wählen Sie einen vorhandenen Server aus und klicken Sie auf *Weiter*.
+.. Geben Sie die Anmeldedaten für den SMB-Server ein.
+.. Wählen Sie *Zugriffssteuerungslisten zum Ziel kopieren* und klicken Sie auf *Weiter*.
++
+image:screenshot_acl_support.gif["Ein Screenshot, in dem die Option zum Aktivieren von Copy Access Control-Listen auf das Ziel angezeigt wird."]
+
+
+
+. Befolgen Sie die übrigen Anweisungen, um die Synchronisierungsbeziehung zu erstellen.
++
+Wenn Sie ACLs zwischen SMB und Objekt-Storage kopieren, können Sie je nach Ziel die ACLs in die Tags des Objekts oder in die Metadaten des Objekts kopieren. Für Azure und Google Cloud Storage ist nur die Metadatenoption verfügbar.
+
++
+Der folgende Screenshot zeigt ein Beispiel für den Schritt, in dem Sie diese Wahl treffen können.
+
++
+image:screenshot-sync-tags-metadata.png["Ein Screenshot des sechsten Schritts im Assistenten für Synchronisierungsbeziehungen beim Kopieren in Objekt-Storage. Sie können die ACLs in den Tags oder Metadaten des Objekts speichern."]
+
+
+
+.Schritte für eine bestehende Beziehung
+. Zeigen Sie mit der Maus auf die Synchronisierungsbeziehung, und klicken Sie auf das Aktionsmenü.
+. Klicken Sie Auf *Einstellungen*.
+. Wählen Sie *Zugriffssteuerungslisten zum Ziel kopieren* aus.
+. Klicken Sie Auf *Einstellungen Speichern*.
+
+
+Beim Synchronisieren von Daten behält Cloud Sync die ACLs zwischen Quelle und Ziel bei.
+
+
+
+== Manuelles Kopieren von ACLs zwischen SMB-Freigaben
+
+Sie können ACLs manuell zwischen SMB-Freigaben beibehalten, indem Sie den Befehl Windows robocopy verwenden.
+
+.Schritte
+. Identifizieren Sie einen Windows-Host mit vollem Zugriff auf beide SMB-Freigaben.
+. Wenn einer der Endpunkte eine Authentifizierung erfordert, verwenden Sie den Befehl *net use*, um eine Verbindung zu den Endpunkten vom Windows-Host herzustellen.
++
+Sie müssen diesen Schritt ausführen, bevor Sie Robocopy verwenden.
+
+. Von Cloud Sync aus: Erstellen Sie eine neue Beziehung zwischen Quell- und Ziel-SMB-Freigaben, oder synchronisieren Sie eine vorhandene Beziehung.
+. Führen Sie nach Abschluss der Datensynchronisierung den folgenden Befehl vom Windows-Host aus aus, um die ACLs und Besitzrechte zu synchronisieren:
++
+ robocopy /E /COPY:SOU /secfix [source] [target] /w:0 /r:0 /XD ~snapshots /UNILOG:”[logfilepath]
++
+Es sollten sowohl _Source_ als auch _Target_ mit dem UNC-Format angegeben werden. Beispiel: \\<Server>\<Freigabe>\<Pfad>
+
+

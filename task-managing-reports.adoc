@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: task-managing-reports.html 
+keywords: reports, sync reports, cloud sync reports, report errors, path reports 
+summary: Berichte erstellen und anzeigen, um Informationen zu erhalten, die Sie mit Unterstützung von NetApp Mitarbeitern verwenden können, um die Konfiguration eines Datenmakers anzupassen und die Performance zu verbessern. 
+---
+= Erstellen und Anzeigen von Berichten zur Anpassung Ihrer Konfiguration
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Erstellen und Anzeigen von Berichten für Informationen, die Sie mit Hilfe von NetApp Mitarbeitern verwenden können, um die Konfiguration eines Datenmaklers abzustimmen und die Performance zu verbessern.
+
+Jeder Bericht enthält detaillierte Details zu einem Pfad in einer Synchronisierungsbeziehung. Der Bericht für ein Dateisystem zeigt beispielsweise an, wie viele Verzeichnisse und Dateien vorhanden sind, wie groß und breit die Verzeichnisse sind und vieles mehr.
+
+
+
+== Erstellen von Berichten
+
+Jedes Mal, wenn Sie einen Bericht erstellen, scannt Cloud Sync den Pfad und fasst die Details anschließend in einen Bericht zusammen.
+
+.Schritte
+. Klicken Sie Auf *Synchronisieren > Berichte*.
++
+Die Pfade (Quelle oder Ziel) in den Synchronisierungsbeziehungen werden in einer Tabelle angezeigt.
+
+. Gehen Sie in der Spalte *Berichte Aktionen* zu einem bestimmten Pfad und klicken Sie auf *Erstellen*, oder klicken Sie auf das Aktionsmenü und wählen Sie *Neu erstellen*.
+. Wenn der Bericht fertig ist, klicken Sie auf das Aktivitätsmenü und wählen Sie *Ansicht*.
++
+Hier finden Sie einen Beispielbericht für einen Filesystem-Pfad.
+
++
+image:screenshot_sync_report.gif["Ein Bericht, in dem die Anzahl der Synchronisierungselemente, die Dateigröße, die Maximalwerte, Zugriffszeit, die Änderungszeit, Und Uhrzeit ändern."]
+
++
+Und hier ein Beispiel-Bericht für Objekt-Storage.
+
++
+image:screenshot_sync_report_object.gif["Ein Bericht, der die Anzahl der Pfadelemente, die Objektgröße, die Änderungszeit und die Speicherklasse anzeigt."]
+
+
+
+
+
+== Berichte werden heruntergeladen
+
+Sie können einen Bericht als PDF herunterladen, sodass Sie ihn offline anzeigen oder freigeben können.
+
+.Schritte
+. Klicken Sie Auf *Synchronisieren > Berichte*.
+. Klicken Sie in der Spalte *Berichte Aktionen* auf das Aktivitätsmenü und wählen Sie *Ansicht*.
+. Klicken Sie oben rechts im Bericht auf das Aktionsmenü und wählen Sie *Download pdf*.
++
+image:screenshot-sync-download-report.png["Ein Screenshot der PDF-Download-Option, die angezeigt wird, nachdem Sie in einem Bericht auf das Aktionsmenü geklickt haben."]
+
+
+
+
+
+== Anzeigen von Berichtsfehlern
+
+Die Tabelle Pfade zeigt an, ob Fehler im letzten Bericht vorliegen. Ein Fehler identifiziert ein Problem, das Cloud Sync beim Scannen des Pfads gegenüberstand.
+
+Ein Bericht kann z. B. Fehler enthalten, bei denen die Berechtigung verweigert wurde. Diese Art von Fehlern kann sich auf die Fähigkeit von Cloud Sync auswirken, den gesamten Satz von Dateien und Verzeichnissen zu scannen.
+
+Nachdem Sie die Fehlerliste angezeigt haben, können Sie die Probleme beheben und den Bericht erneut ausführen.
+
+.Schritte
+. Klicken Sie Auf *Synchronisieren > Berichte*.
+. Identifizieren Sie in der Spalte *errors*, ob Fehler in einem Bericht vorliegen.
+. Wenn Fehler vorliegen, klicken Sie auf den Pfeil neben der Anzahl der Fehler.
++
+image:screenshot_sync_report_errors.gif["Ein Screenshot der Pfadtabelle, in dem die Anzahl der Fehler und ein kleiner anklickbarer Pfeil in der Fehlerspalte angezeigt werden."]
+
+. Verwenden Sie die Fehlerinformationen, um das Problem zu beheben.
++
+Nachdem Sie das Problem behoben haben, sollte der Fehler beim nächsten Ausführen des Berichts nicht angezeigt werden.
+
+
+
+
+
+== Berichte werden gelöscht
+
+Sie können einen Bericht davon löschen, der einen Fehler enthielt, den Sie behoben haben, oder wenn der Bericht auf eine Synchronisierungsbeziehung zurückzuführen ist, die Sie entfernt haben.
+
+.Schritte
+. Klicken Sie Auf *Synchronisieren > Berichte*.
+. Klicken Sie in der Spalte *Berichte Aktionen* auf das Aktionsmenü für einen Pfad und wählen Sie *Letzter Bericht löschen* oder *Alle Berichte löschen*.
+. Bestätigen Sie, dass Sie den Bericht oder die Berichte löschen möchten.
+

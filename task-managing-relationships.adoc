@@ -1,0 +1,199 @@
+---
+sidebar: sidebar 
+permalink: task-managing-relationships.html 
+keywords: sync, immediate, now, schedule, minutes, hours, on, off, delete, group, accelerate, accelerating, grouping, multiple data brokers, sync now, turn off, turn on, sync schedule, settings, change settings, recently modified files, delete files on target, retries, retry, file types, exclude file type, include file type, delete relationship 
+summary: Sie können Synchronisierungsbeziehungen jederzeit verwalten, indem Sie Daten sofort synchronisieren, Zeitpläne ändern und vieles mehr. 
+---
+= Verwalten von Synchronisierungsbeziehungen
+:toc: macro
+:hardbreaks:
+:allow-uri-read: 
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+Sie können Synchronisierungsbeziehungen jederzeit verwalten, indem Sie Daten sofort synchronisieren, Zeitpläne ändern und vieles mehr.
+
+
+
+== Sofortige Datensynchronisierung durchführen
+
+Anstatt auf die nächste geplante Synchronisierung zu warten, können Sie eine Taste drücken, um Daten sofort zwischen Quelle und Ziel zu synchronisieren.
+
+.Schritte
+. Navigieren Sie im *Dashboard* zur Synchronisierungsbeziehung und klicken Sie auf image:icon-sync-action.png["Ein Screenshot der Schaltfläche, in dem Sie Aktionen in einer Synchronisierungsbeziehung vornehmen können"]
+. Klicken Sie auf *Jetzt synchronisieren* und dann auf *Sync*, um zu bestätigen.
+
+
+Cloud Sync startet den Datensynchronisierungsprozess für die Beziehung.
+
+
+
+== Beschleunigung der Sync-Performance
+
+Beschleunigung der Performance einer Synchronisierungsbeziehung durch Hinzufügen eines zusätzlichen Daten-Brokers zu der Gruppe, die die Beziehung managt Der zusätzliche Daten-Broker muss ein _neuer_ Daten-Broker sein.
+
+Wenn die Gruppe für Daten-Broker andere Synchronisierungsbeziehungen verwaltet, dann beschleunigt der neue Daten-Broker, den Sie der Gruppe hinzufügen, auch die Performance dieser Synchronisierungsbeziehungen.
+
+Nehmen wir zum Beispiel an, Sie haben drei Beziehungen:
+
+* Beziehung 1 wird von Datenmaklergruppe A gemanagt
+* Beziehung 2 wird von Datenmakler Gruppe B verwaltet
+* Beziehung 3 wird von Datenmaklergruppe A gemanagt
+
+
+Sie möchten die Performance von Beziehung 1 steigern, damit Sie der Datenmakler-Gruppe A einen neuen Makler hinzufügen Da Gruppe A auch die Synchronisierungsbeziehung 3 verwaltet, wird auch die Sync-Performance für eine Beziehung automatisch beschleunigt.
+
+.Schritte
+. Stellen Sie sicher, dass mindestens einer der vorhandenen Datenvermittler in der Beziehung online ist.
+. Navigieren Sie im *Dashboard* zur Synchronisierungsbeziehung und klicken Sie auf image:icon-sync-action.png["Ein Screenshot der Schaltfläche, in dem Sie Aktionen in einer Synchronisierungsbeziehung vornehmen können"]
+. Klicken Sie Auf *Beschleunigen*.
+. Folgen Sie den Anweisungen, um einen neuen Daten-Broker zu erstellen.
+
+
+Cloud Sync fügt der Gruppe den neuen Datenmakler hinzu. Die Performance der nächsten Datensynchronisierung sollte beschleunigt werden.
+
+
+
+== Anmeldedaten werden aktualisiert
+
+Sie können den Daten-Broker mit den neuesten Anmeldeinformationen des Quell- oder Zielsystems in einer vorhandenen Synchronisierungsbeziehung aktualisieren. Die Aktualisierung der Anmeldeinformationen kann hilfreich sein, wenn Sie in Ihren Sicherheitsrichtlinien die Anmeldeinformationen regelmäßig aktualisieren müssen.
+
+Das Aktualisieren der Anmeldedaten wird mit jeder Quelle oder jedem Ziel unterstützt, für die Cloud Sync Zugangsdaten benötigt: Azure Blob, Box, IBM Cloud Object Storage, StorageGRID, ONTAP S3 Storage, SFTP und SMB-Server.
+
+.Schritte
+. Gehen Sie im *Sync Dashboard* zu einer Synchronisierungsbeziehung, die Anmeldeinformationen erfordert, und klicken Sie dann auf *Anmeldedaten aktualisieren*.
++
+image:screenshot_sync_update_credentials.png["Ein Screenshot, in dem die Option Anmeldeinformationen aktualisieren auf der Seite Beziehungen synchronisieren direkt unter dem Namen der Quelle oder des Ziels angezeigt wird."]
+
+. Geben Sie die Anmeldeinformationen ein und klicken Sie auf *Update*.
++
+Hinweis zu SMB-Servern: Wenn die Domäne neu ist, müssen Sie sie beim Aktualisieren der Anmeldedaten angeben. Wenn sich die Domäne nicht geändert hat, müssen Sie sie nicht erneut eingeben.
+
++
+Wenn Sie beim Erstellen der Synchronisierungsbeziehung eine Domäne eingegeben haben, aber beim Aktualisieren der Anmeldedaten keine neue Domäne eingeben, wird Cloud Sync weiterhin die ursprüngliche Domäne verwenden, die Sie angegeben haben.
+
+
+
+Cloud Sync aktualisiert die Zugangsdaten auf dem Daten-Broker. Es kann bis zu 10 Minuten dauern, bis der Daten-Broker mit den aktualisierten Zugangsdaten zur Synchronisierung der Daten beginnt.
+
+
+
+== Einrichten von Benachrichtigungen
+
+Mit einer *Benachrichtigungen*-Einstellung für jede Synchronisierungsbeziehung können Sie auswählen, ob Sie Cloud Sync Benachrichtigungen im Benachrichtigungscenter von BlueXP erhalten möchten. Benachrichtigungen für erfolgreiche Datensynchronisation, fehlerhafte Datensynchronisation und stornierte Datensynchronisierungen sind möglich.
+
+image:https://raw.githubusercontent.com/NetAppDocs/cloud-manager-sync/main/media/screenshot-notification-center.png["Ein Screenshot, der das Benachrichtigungszentrum in BlueXP zeigt."]
+
+Außerdem können Sie auch per E-Mail benachrichtigt werden.
+
+.Schritte
+. Ändern Sie die Einstellungen für eine Synchronisierungsbeziehung:
++
+.. Navigieren Sie im *Dashboard* zur Synchronisierungsbeziehung und klicken Sie auf image:icon-sync-action.png["Ein Screenshot der Schaltfläche, in dem Sie Aktionen in einer Synchronisierungsbeziehung vornehmen können"]
+.. Klicken Sie Auf *Einstellungen*.
+.. Aktivieren Sie *Benachrichtigungen*.
+.. Klicken Sie Auf *Einstellungen Speichern*.
+
+
+. Wenn Sie Benachrichtigungen per E-Mail erhalten möchten, konfigurieren Sie die Einstellungen für Warnmeldungen und Benachrichtigungen:
++
+.. Klicken Sie auf *Einstellungen > Einstellungen für Alarme und Benachrichtigungen*.
+.. Wählen Sie einen oder mehrere Benutzer aus, und wählen Sie den Benachrichtigungstyp *Info* aus.
+.. Klicken Sie Auf *Anwenden*.
+
+
+
+
+Sie erhalten jetzt Cloud Sync-Benachrichtigungen im Benachrichtigungscenter von BlueXP. Wenn Sie diese Option konfiguriert haben, erhalten Sie einige Benachrichtigungen per E-Mail.
+
+
+
+== Ändern der Einstellungen für eine Synchronisierungsbeziehung
+
+Ändern Sie Einstellungen, mit denen festgelegt wird, wie Quelldateien und Ordner synchronisiert und am Zielspeicherort verwaltet werden.
+
+. Navigieren Sie im *Dashboard* zur Synchronisierungsbeziehung und klicken Sie auf image:icon-sync-action.png["Ein Screenshot der Schaltfläche, in dem Sie Aktionen in einer Synchronisierungsbeziehung vornehmen können"]
+. Klicken Sie Auf *Einstellungen*.
+. Ändern Sie alle Einstellungen.
++
+image:screenshot_sync_settings.png["Ein Screenshot, der die Einstellungen für eine Synchronisierungsbeziehung anzeigt."]
+
++
+[[deleteonsource] Hier eine kurze Beschreibung der einzelnen Einstellungen:
+
++
+Zeitplan:: Wählen Sie einen wiederkehrenden Zeitplan für zukünftige Synchronisierungen aus oder deaktivieren Sie den Synchronisationsplan. Sie können eine Beziehung planen, um Daten bis zu alle 1 Minute zu synchronisieren.
+Sync Timeout:: Legen Sie fest, ob Cloud Sync eine Datensynchronisation abbrechen soll, wenn die Synchronisierung in der angegebenen Anzahl an Stunden oder Tagen nicht abgeschlossen ist.
+Benachrichtigungen:: Ermöglicht Ihnen die Auswahl, ob Sie Cloud Sync Benachrichtigungen im Benachrichtigungscenter von BlueXP erhalten möchten. Benachrichtigungen für erfolgreiche Datensynchronisation, fehlerhafte Datensynchronisation und stornierte Datensynchronisierungen sind möglich.
++
+--
+Wenn Sie Benachrichtigungen erhalten möchten für
+
+--
+Wiederholungen:: Legen Sie fest, wie oft Cloud Sync versuchen soll, eine Datei zu synchronisieren, bevor Sie sie überspringen.
+Vergleich Von:: Wählen Sie aus, ob Cloud Sync bestimmte Attribute vergleichen soll, wenn Sie feststellen, ob sich eine Datei oder ein Verzeichnis geändert hat und erneut synchronisiert werden soll.
++
+--
+Selbst wenn Sie diese Attribute deaktivieren, vergleicht Cloud Sync die Quelle immer noch mit dem Ziel, indem es die Pfade, Dateigrößen und Dateinamen überprüft. Falls Änderungen vorliegen, werden diese Dateien und Verzeichnisse synchronisiert.
+
+Sie können festlegen, dass Cloud Sync aktiviert oder deaktiviert wird, indem Sie die folgenden Attribute vergleichen:
+
+** *Mtime*: Die letzte geänderte Zeit für eine Datei. Dieses Attribut ist für Verzeichnisse nicht gültig.
+** *Uid*, *gid* und *Mode*: Berechtigungsflaggen für Linux.
+
+
+--
+Für Objekte kopieren:: Sie können diese Option nicht bearbeiten, nachdem Sie die Beziehung erstellt haben.
+Kürzlich geänderte Dateien:: Wählen Sie diese Option aus, um Dateien auszuschließen, die vor der geplanten Synchronisierung zuletzt geändert wurden.
+Dateien auf Quelle löschen:: Wählen Sie diese Option aus, um Dateien vom Quellspeicherort zu löschen, nachdem Cloud Sync die Dateien auf den Zielspeicherort kopiert hat. Diese Option schließt das Risiko eines Datenverlusts ein, da die Quelldateien nach dem Kopieren gelöscht werden.
++
+--
+Wenn Sie diese Option aktivieren, müssen Sie auch einen Parameter in der Datei local.json im Datenvermittler ändern. Öffnen Sie die Datei und aktualisieren Sie sie wie folgt:
+
+[source, json]
+----
+{
+"workers":{
+"transferrer":{
+"delete-on-source": true
+}
+}
+}
+----
+--
+Dateien auf Ziel löschen:: Wählen Sie diese Option aus, um Dateien vom Zielspeicherort zu löschen, wenn sie aus der Quelle gelöscht wurden. Standardmäßig werden Dateien nie vom Zielspeicherort gelöscht.
+Dateitypen:: Definieren Sie die Dateitypen, die in jede Synchronisierung einbezogen werden sollen: Dateien, Verzeichnisse und symbolische Links.
+Dateierweiterungen ausschließen:: Geben Sie Dateierweiterungen an, die vom Sync ausgeschlossen werden sollen, indem Sie die Dateierweiterung eingeben und *Enter* drücken. Geben Sie beispielsweise _log_ oder _.log_ ein, um *.log-Dateien auszuschließen. Für mehrere Erweiterungen ist kein Trennzeichen erforderlich. Das folgende Video enthält eine kurze Demo:
++
+--
+video::video_file_extensions.mp4[width=840,height=240]
+--
+Dateigröße:: Wählen Sie, ob alle Dateien unabhängig von ihrer Größe oder nur Dateien in einem bestimmten Größenbereich synchronisiert werden sollen.
+Änderungsdatum:: Wählen Sie alle Dateien unabhängig vom letzten Änderungsdatum aus, Dateien, die nach einem bestimmten Datum, vor einem bestimmten Datum oder zwischen einem bestimmten Zeitraum geändert wurden.
+Erstellungsdatum:: Wenn ein SMB-Server die Quelle ist, können Sie mit dieser Einstellung Dateien synchronisieren, die nach einem bestimmten Datum, vor einem bestimmten Datum oder zwischen einem bestimmten Zeitraum erstellt wurden.
+ACL – Access Control List:: Kopieren Sie ACLs von einem SMB-Server, indem Sie eine Einstellung aktivieren, wenn Sie eine Beziehung erstellen oder nachdem Sie eine Beziehung erstellt haben.
+
+
+. Klicken Sie Auf *Einstellungen Speichern*.
+
+
+Cloud Sync ändert die Synchronisierungsbeziehung mit den neuen Einstellungen.
+
+
+
+== Löschen von Beziehungen
+
+Sie können eine Synchronisierungsbeziehung löschen, wenn Sie keine Daten mehr zwischen Quelle und Ziel synchronisieren müssen. Diese Aktion löscht nicht die Gruppe des Daten-Brokers (oder die Instanzen einzelner Daten-Broker) und löscht keine Daten aus dem Ziel.
+
+.Schritte
+. Navigieren Sie im *Dashboard* zur Synchronisierungsbeziehung und klicken Sie auf image:icon-sync-action.png["Ein Screenshot der Schaltfläche, in dem Sie Aktionen in einer Synchronisierungsbeziehung vornehmen können"]
+. Klicken Sie auf *Löschen* und dann erneut auf *Löschen*, um zu bestätigen.
+
+
+Cloud Sync löscht die Synchronisierungsbeziehung.
