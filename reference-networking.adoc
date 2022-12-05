@@ -100,7 +100,7 @@ Ein Datenvermittler kontaktiert die folgenden Endpunkte:
 | \https://sts.amazonaws.com | Damit können die AWS Zugangsdaten überprüft werden, wenn der Daten-Broker in AWS bereitgestellt wird oder wann er vor Ort bereitgestellt wird und AWS Zugangsdaten bereitgestellt werden. Der Daten-Broker kontaktiert diesen Endpunkt während der Implementierung, nach Aktualisierung und nach einem Neustart. 
 
 
-| \https://cloudmanager.cloud.netapp.com \https://netapp-cloud-account.auth0.com | Um Cloud Data Sense zu kontaktieren, wenn Sie Data Sense verwenden, um die Quelldateien für eine neue Synchronisierungsbeziehung auszuwählen. 
+| \https://console.bluexp.netapp.com/ \https://netapp-cloud-account.auth0.com | Um Cloud Data Sense zu kontaktieren, wenn Sie Data Sense verwenden, um die Quelldateien für eine neue Synchronisierungsbeziehung auszuwählen. 
 |===
 
 

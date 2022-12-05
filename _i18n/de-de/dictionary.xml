@@ -158,7 +158,6 @@
   <block id="3543e99477c1442fbb915931461a4166" category="list-text"><block ref="3543e99477c1442fbb915931461a4166" category="inline-link-macro-rx"></block></block>
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">Weitere Informationen .</block>
   <block id="9b9477e579c3b44dd623d5a6e1ea8d78" category="inline-link">BlueXP</block>
-  <block id="7aedb7a8840bf63ff8088dc466015c95" category="paragraph">Melden Sie sich bei an<block ref="d85b267f9a6ceedd0cd11e64f7f19978" category="inline-link-rx"></block>Klicken Sie auf *Sync* und ziehen Sie dann die Auswahl für die Quelle und das Ziel und legen Sie sie ab. Befolgen Sie die Anweisungen, um die Einrichtung abzuschließen. <block ref="484d4f19cf4f8d33cb3a1a91aa23f363" category="inline-link-macro-rx"></block>.</block>
   <block id="1f49b87cd49b58f3b9afa1f411cb454d" category="paragraph">Abonnieren Sie AWS oder Azure, um nutzungsbasiert zu bezahlen oder jährlich zu zahlen. Oder erwerben Sie Lizenzen direkt von NetApp. Rufen Sie einfach die Seite Lizenzeinstellungen in Cloud Sync auf, um sie einzurichten. <block ref="3cd689475b04fdbdf7fafd004b01a742" category="inline-link-macro-rx"></block>.</block>
   <block id="d5ca9cde56246aa6b86169e0939388c5" category="summary">Cloud Sync ist ein Cloud-Replizierungs- und Synchronisierungsservice zur Übertragung von NAS-Daten zwischen lokalen und Cloud-Objektspeichern.</block>
   <block id="815e6b3583bbc9969fd306b9391ed0cb" category="doc">Cloud Sync-Dokumentation</block>
@@ -383,9 +382,7 @@
   <block id="00fc9d0c515c69ea2c368521453d982e" category="inline-xref">Erfahren Sie, wie Sie sich mit NetApp anmelden können</block>
   <block id="97454ce87333f7ebd50ee38b8126fb39" category="paragraph"><block ref="37544f11913357c4e8c8a4ec607ae247" category="inline-xref-macro-rx"></block>.</block>
   <block id="a92ec860f505b318fd0f0eba6165d607" category="section-title">Fügen Sie ein NSS-Konto zu BlueXP hinzu</block>
-  <block id="77bdda0b5be7d2725f2b5941d74db0e2" category="paragraph">Über das Support Dashboard können Sie Ihre NetApp Support Site Konten für die Verwendung mit Cloud Manager hinzufügen und managen.</block>
   <block id="328a2c1e7778e9edaf79d90c51409ac4" category="list-text">Wenn Sie über ein Konto auf Kundenebene verfügen, können Sie ein oder mehrere NSS-Konten hinzufügen.</block>
-  <block id="4fde72c535fd0cd463dbeb49347cdfae" category="list-text">Wenn Sie ein Partner- oder Reseller-Konto haben, können Sie ein oder mehrere NSS-Konten hinzufügen, aber sie können nicht neben Kunden-Level-Accounts hinzugefügt werden.</block>
   <block id="1afe19576f77bb0073c93359ed2cbb18" category="list-text">Klicken Sie oben rechts in der BlueXP-Konsole auf das Hilfesymbol, und wählen Sie *Support*.</block>
   <block id="b50f0a46135bcb7083b1f2f82032fc26" category="inline-image-macro">Ein Screenshot des Hilfemenü, in dem Support die erste Option aufgeführt ist</block>
   <block id="868d9aa88f16ea923af1d15eac5d2647" category="paragraph"><block ref="868d9aa88f16ea923af1d15eac5d2647" category="inline-image-macro-rx" type="image"></block></block>
@@ -415,17 +412,14 @@
   <block id="5226d4ec1f4f81b740cbbd27635b441f" category="list-text">Kopieren Sie unbedingt die oben verwendete BlueXP-Kontonummer (960xxxx) für das Feld Seriennummer. Dadurch wird die Kontobearbeitung beschleunigt.</block>
   <block id="e9b1f53d6cabb3394833a4e102eb6a69" category="section-title">Neu bei NetApp</block>
   <block id="c20c107d0d4eef6351660f3590324232" category="paragraph">Wenn Sie neu bei NetApp sind und über keinen NSS-Account verfügen, befolgen Sie jeden Schritt unten.</block>
-  <block id="59dd2a274c2c6a3cc5b3dce08109019d" category="list-text">Suchen Sie die Seriennummer Ihres Cloud Manager-Kontos auf der Seite für die Support-Registrierung.</block>
   <block id="ef5e63bb6b6827440a13cc2ec7e9cf56" category="paragraph"><block ref="ef5e63bb6b6827440a13cc2ec7e9cf56" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dd50e314c18933734174c1156dd9237f" category="inline-link">Die Support-Registrierungs-Website von NetApp</block>
   <block id="78f94e749b89d69dcbf3baff21ccb958" category="list-text">Navigieren Sie zu<block ref="e1c4be66250fd76d5c52bfe2cb7daee2" category="inline-link-rx"></block> Und wählen Sie *Ich bin kein registrierter NetApp Kunde*.</block>
   <block id="d4f633ef130727b2776fa7f45024ca7d" category="list-text">Füllen Sie die Pflichtfelder aus (mit roten Sternchen).</block>
   <block id="1128fc8d5ec64880f4d49337ed798d31" category="list-text">Wählen Sie im Feld *Product Line* die Option *Cloud Manager* aus, und wählen Sie dann den gewünschten Abrechnungsanbieter aus.</block>
-  <block id="1192dec4cc2b923397748a651cef178f" category="list-text">Kopieren Sie die Seriennummer des Cloud Manager Kontos von Schritt 2 oben, füllen Sie die Sicherheitsprüfung aus und bestätigen Sie dann, dass Sie die globale Datenschutzrichtlinie von NetApp lesen.</block>
   <block id="3a24c87c9971d2011b4df223718f84b4" category="paragraph">Zur Fertigstellung dieser sicheren Transaktion wird sofort eine E-Mail an die angegebene Mailbox gesendet. Überprüfen Sie Ihre Spam-Ordner, wenn die Validierungs-E-Mail nicht in wenigen Minuten ankommt.</block>
   <block id="03413baeca1ff7222737d8ce299bd4e8" category="list-text">Bestätigen Sie die Aktion in der E-Mail.</block>
   <block id="201080500e946070a2e4873042507c77" category="paragraph">Indem Sie Ihre Anfrage an NetApp senden, wird Ihnen die Erstellung eines NetApp Support Site Kontos empfohlen.</block>
-  <block id="d6cb31c22f8f843a781cccec33157281" category="list-text">Kopieren Sie die oben angegebene Cloud Manager Account Seriennummer (960xxxx) für das Feld Seriennummer. Dadurch wird die Kontobearbeitung beschleunigt.</block>
   <block id="684375e279a289295b72a006d93e2c4c" category="paragraph">NetApp sollte sich bei diesem Prozess mit Ihnen in Verbindung setzen. Dies ist eine einmalige Onboarding-Übung für neue Benutzer.</block>
   <block id="1c0e45ef07d0dbc13ca2394d5e285fd7" category="paragraph">Sobald Sie Ihren NetApp Support Site Account besitzen, können Sie im Portal BlueXP diesen NSS-Account für zukünftige Registrierungen hinzufügen.</block>
   <block id="c9df4195a305212ffd7b56d24f67129d" category="summary">NetApp bietet Unterstützung für BlueXP auf verschiedene Weise. Umfassende kostenlose Self-Support-Optionen stehen rund um die Uhr zur Verfügung, wie etwa Knowledge Base-Artikel (KB) und ein Community-Forum. Ihre Support-Registrierung umfasst technischen Remote-Support über Web-Ticketing.</block>
@@ -515,7 +509,6 @@
   <block id="ebd974875888e4cb1567f55e3466cda1" category="cell">Installation von 7 z auf der virtuellen Maschine des Datenmakers während der Installation und Aktualisierungen 7z ist erforderlich, um AutoSupport Meldungen an den technischen Support von NetApp zu senden.</block>
   <block id="6af6c652626660023ec712f6c15bbc0a" category="cell">\https://sts.amazonaws.com</block>
   <block id="89100474e7faee0c34727c4b2b471007" category="cell">Damit können die AWS Zugangsdaten überprüft werden, wenn der Daten-Broker in AWS bereitgestellt wird oder wann er vor Ort bereitgestellt wird und AWS Zugangsdaten bereitgestellt werden. Der Daten-Broker kontaktiert diesen Endpunkt während der Implementierung, nach Aktualisierung und nach einem Neustart.</block>
-  <block id="6f47e3c3a8d9335c299efee22582068c" category="cell">\https://cloudmanager.cloud.netapp.com \https://netapp-cloud-account.auth0.com</block>
   <block id="7f13eefefc02d429e3f594cb6d48d10e" category="cell">Um Cloud Data Sense zu kontaktieren, wenn Sie Data Sense verwenden, um die Quelldateien für eine neue Synchronisierungsbeziehung auszuwählen.</block>
   <block id="6a3cdc9a7bccf7b319d4cd575bb3b01f" category="section-title">Webbrowser-Endpunkte</block>
   <block id="fd0cb271f0ac093ecb033a2bfea34fbd" category="paragraph">Ihr Webbrowser benötigt Zugriff auf den folgenden Endpunkt, um Protokolle zur Fehlerbehebung herunterzuladen:</block>
@@ -1679,4 +1672,11 @@
   <block id="bd5465eb0e8cf8f303aee7ea9420c8b1" category="sidebar">BlueXP-Blog</block>
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Cloud-Webinare</block>
   <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Alle BlueXP-Dokumentationen</block>
+  <block id="e7972d5601badb4c5fcefad96c59c2fc" category="cell">\https://console.bluexp.netapp.com/ \https://netapp-cloud-account.auth0.com</block>
+  <block id="5a6f95f0d3a768c4ec5fabda878a438c" category="paragraph">Melden Sie sich bei an<block ref="a52ee1b87e73428b189d0907dc7fe59b" category="inline-link-rx"></block>Klicken Sie auf *Sync* und ziehen Sie dann die Auswahl für die Quelle und das Ziel und legen Sie sie ab. Befolgen Sie die Anweisungen, um die Einrichtung abzuschließen. <block ref="484d4f19cf4f8d33cb3a1a91aa23f363" category="inline-link-macro-rx"></block>.</block>
+  <block id="f2575f6d19024f7288cf78d7dc5b3db9" category="paragraph">Über das Support Dashboard können Sie Ihre NetApp Support Site Konten zur Verwendung mit BlueXP hinzufügen und managen.</block>
+  <block id="e3cd99e4aa330ae6bdfb3754d83ae962" category="list-text">Wenn Sie einen Partner- oder Reseller-Account haben, können Sie ein oder mehrere NSS-Konten hinzufügen, können aber nicht neben Kunden-Level Accounts hinzugefügt werden.</block>
+  <block id="2974170a8b1b5b4a2ac69aacd4c1c9c3" category="list-text">Suchen Sie auf der Seite für die Support-Registrierung die Seriennummer Ihres Kontos.</block>
+  <block id="50a1dc01b7312307c34a888071586955" category="list-text">Kopieren Sie die Seriennummer des Kontos von Schritt 2 oben, füllen Sie die Sicherheitsprüfung aus und bestätigen Sie dann, dass Sie die globale Datenschutzrichtlinie von NetApp lesen.</block>
+  <block id="cc8b0535948da368f832027c19b7f853" category="list-text">Kopieren Sie die oben angegebene Seriennummer (960xxxx) für das Feld „Seriennummer“. Dadurch wird die Kontobearbeitung beschleunigt.</block>
 </blocks>

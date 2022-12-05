@@ -54,7 +54,7 @@ Cloud Sync führt Sie durch den Installationsprozess, wenn Sie eine Synchronisie
 
 
 [role="quick-margin-para"]
-Melden Sie sich bei an https://cloudmanager.netapp.com/["BlueXP"^]Klicken Sie auf *Sync* und ziehen Sie dann die Auswahl für die Quelle und das Ziel und legen Sie sie ab. Befolgen Sie die Anweisungen, um die Einrichtung abzuschließen. link:task-creating-relationships.html["Weitere Informationen ."].
+Melden Sie sich bei an https://console.bluexp.netapp.com/["BlueXP"^]Klicken Sie auf *Sync* und ziehen Sie dann die Auswahl für die Quelle und das Ziel und legen Sie sie ab. Befolgen Sie die Anweisungen, um die Einrichtung abzuschließen. link:task-creating-relationships.html["Weitere Informationen ."].
 
 [role="quick-margin-para"]
 Abonnieren Sie AWS oder Azure, um nutzungsbasiert zu bezahlen oder jährlich zu zahlen. Oder erwerben Sie Lizenzen direkt von NetApp. Rufen Sie einfach die Seite Lizenzeinstellungen in Cloud Sync auf, um sie einzurichten. link:task-licensing.html["Weitere Informationen ."].
