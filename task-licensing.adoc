@@ -28,7 +28,7 @@ Sie werden keine weiteren Beziehungen erstellen können. Bestehende Beziehungen 
 ****
 
 
-== Abonnieren von AWS
+== [[aws]]abonnieren von AWS
 
 AWS ermöglicht Ihnen, nutzungsbasiert zu zahlen oder jährlich zu zahlen.
 
@@ -52,10 +52,11 @@ video::video_cloud_sync_registering.mp4[width=848,height=480]
 
 
 
-== Abonnieren von Azure
+== [[Azure]]abonnieren von Azure
 
 Azure ermöglicht Ihnen, nutzungsbasiert zu zahlen oder jährlich zu zahlen.
 
+.Was Sie benötigen
 Ein Azure Benutzerkonto, das Mitarbeiter- oder Eigentümerberechtigungen für das entsprechende Abonnement besitzt.
 
 .Schritte
@@ -77,10 +78,11 @@ video::video_cloud_sync_registering_azure.mp4[width=848,height=480]
 
 
 
-== Erwerb von Lizenzen von NetApp und deren Ergänzung zu Cloud Sync
+== [[Lizenzen]]Lizenzen von NetApp erwerben und zu Cloud Sync hinzufügen
 
 Um Ihre Synchronisierungsbeziehungen vorab zu bezahlen, müssen Sie eine oder mehrere Lizenzen erwerben und sie dem Cloud Sync Service hinzufügen.
 
+.Was Sie benötigen
 Sie benötigen die Seriennummer Ihrer Lizenz und den Benutzernamen und das Kennwort für das NetApp Support Site Konto, mit dem die Lizenz verknüpft ist.
 
 .Schritte
@@ -117,4 +119,5 @@ Wenn Sie eine Cloud Sync Lizenz von NetApp erworben haben, wird das neue Ablaufd
 
 
 
+.Ergebnis
 Cloud Sync aktualisiert die vorhandene Lizenz mit dem neuen Ablaufdatum.

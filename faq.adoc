@@ -90,7 +90,7 @@ Cloud Sync ist über die BlueXP-Website auf der Registerkarte *Sync* verfügbar.
 
 
 
-=== Was ist eine Data Broker Gruppe?
+=== Was ist eine Data Broker-Gruppe?
 
 Jeder Daten-Broker gehört zu einer Data Broker-Gruppe. Das Zusammenführen von Datenmaklern trägt zu einer verbesserten Performance von Synchronisierungsbeziehungen bei.
 

@@ -30,6 +30,7 @@ Anstatt auf die nächste geplante Synchronisierung zu warten, können Sie eine T
 . Klicken Sie auf *Jetzt synchronisieren* und dann auf *Sync*, um zu bestätigen.
 
 
+.Ergebnis
 Cloud Sync startet den Datensynchronisierungsprozess für die Beziehung.
 
 
@@ -38,6 +39,7 @@ Cloud Sync startet den Datensynchronisierungsprozess für die Beziehung.
 
 Beschleunigung der Performance einer Synchronisierungsbeziehung durch Hinzufügen eines zusätzlichen Daten-Brokers zu der Gruppe, die die Beziehung managt Der zusätzliche Daten-Broker muss ein _neuer_ Daten-Broker sein.
 
+.So funktioniert das
 Wenn die Gruppe für Daten-Broker andere Synchronisierungsbeziehungen verwaltet, dann beschleunigt der neue Daten-Broker, den Sie der Gruppe hinzufügen, auch die Performance dieser Synchronisierungsbeziehungen.
 
 Nehmen wir zum Beispiel an, Sie haben drei Beziehungen:
@@ -56,6 +58,7 @@ Sie möchten die Performance von Beziehung 1 steigern, damit Sie der Datenmakler
 . Folgen Sie den Anweisungen, um einen neuen Daten-Broker zu erstellen.
 
 
+.Ergebnis
 Cloud Sync fügt der Gruppe den neuen Datenmakler hinzu. Die Performance der nächsten Datensynchronisierung sollte beschleunigt werden.
 
 
@@ -80,6 +83,7 @@ Wenn Sie beim Erstellen der Synchronisierungsbeziehung eine Domäne eingegeben h
 
 
 
+.Ergebnis
 Cloud Sync aktualisiert die Zugangsdaten auf dem Daten-Broker. Es kann bis zu 10 Minuten dauern, bis der Daten-Broker mit den aktualisierten Zugangsdaten zur Synchronisierung der Daten beginnt.
 
 
@@ -110,6 +114,7 @@ Außerdem können Sie auch per E-Mail benachrichtigt werden.
 
 
 
+.Ergebnis
 Sie erhalten jetzt Cloud Sync-Benachrichtigungen im Benachrichtigungscenter von BlueXP. Wenn Sie diese Option konfiguriert haben, erhalten Sie einige Benachrichtigungen per E-Mail.
 
 
@@ -183,6 +188,7 @@ ACL – Access Control List:: Kopieren Sie ACLs von einem SMB-Server, indem Sie 
 . Klicken Sie Auf *Einstellungen Speichern*.
 
 
+.Ergebnis
 Cloud Sync ändert die Synchronisierungsbeziehung mit den neuen Einstellungen.
 
 
@@ -196,4 +202,5 @@ Sie können eine Synchronisierungsbeziehung löschen, wenn Sie keine Daten mehr 
 . Klicken Sie auf *Löschen* und dann erneut auf *Löschen*, um zu bestätigen.
 
 
+.Ergebnis
 Cloud Sync löscht die Synchronisierungsbeziehung.

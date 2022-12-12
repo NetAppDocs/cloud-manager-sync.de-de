@@ -135,6 +135,7 @@ Die Bereitstellung der Instanz dauert etwa 5 bis 10 Minuten. Sie können den For
 . Füllen Sie die Seiten im Assistenten aus, um die neue Synchronisierungsbeziehung zu erstellen.
 
 
+.Ergebnis
 Sie haben einen Datenmanager in Google Cloud implementiert und eine neue Synchronisierungsbeziehung erstellt. Sie können diesen Daten-Broker mit zusätzlichen Synchronisierungsbeziehungen verwenden.
 
 
@@ -149,10 +150,11 @@ Wenn Sie eine Synchronisierungsbeziehung erstellen und Google Cloud Storage als 
 . Klicken Sie Auf *Berechtigungen*.
 . Klicken Sie Auf *Hinzufügen*.
 . Geben Sie den Namen des Dienstkontos des Datenmakers ein.
-. Wählen Sie eine Rolle aus, die bereitgestellt wird  required for the service account,Dieselben Berechtigungen wie oben dargestellt.
+. Wählen Sie eine Rolle aus, die bereitgestellt wird <<Für das Servicekonto erforderliche Berechtigungen,Dieselben Berechtigungen wie oben dargestellt>>.
 . Klicken Sie Auf *Speichern*.
 
 
+.Ergebnis
 Wenn Sie eine Synchronisierungsbeziehung einrichten, können Sie nun diesen Bucket als Quelle oder Ziel in der Synchronisierungsbeziehung auswählen.
 
 

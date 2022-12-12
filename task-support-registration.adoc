@@ -37,14 +37,14 @@ Ihre Anmeldung hängt davon ab, ob Sie ein neuer oder bereits bestehender Kunde 
 Als bestehender NetApp Kunde oder Partner können Sie mit Ihrem NSS SSO-Konto (NetApp Support Site) die oben genannten Registrierungen durchführen. Im Support Dashboard stellt BlueXP eine *NSS Management*-Seite zur Verfügung, auf der Sie Ihr NSS-Konto hinzufügen können. Sobald Sie Ihr NSS-Konto hinzugefügt haben, registriert BlueXP diese Seriennummern automatisch für Sie.
 
 +
- an NSS account to BlueXP,Erfahren Sie, wie Sie Ihr NSS-Konto hinzufügen.
+<<Fügen Sie ein NSS-Konto zu BlueXP hinzu,Erfahren Sie, wie Sie Ihr NSS-Konto hinzufügen>>.
 
 * Neu bei NetApp
 +
 Wenn Sie neu bei NetApp sind, müssen Sie eine einmalige Registrierung Ihrer BlueXP Account ID Seriennummer auf der Support-Registrierungsseite von NetApp abschließen. Sobald Sie diese Registrierung abgeschlossen und ein neues NSS-Konto erstellt haben, können Sie dieses Konto in BlueXP verwenden, um sich in Zukunft automatisch zu registrieren.
 
 +
- with NetApp,Erfahren Sie, wie Sie sich mit NetApp anmelden können.
+<<Mit NetApp registrieren,Erfahren Sie, wie Sie sich mit NetApp anmelden können>>.
 
 
 
@@ -156,6 +156,7 @@ Indem Sie Ihre Anfrage an NetApp senden, wird Ihnen die Erstellung eines NetApp 
 
 
 
+.Nachdem Sie fertig sind
 NetApp sollte sich bei diesem Prozess mit Ihnen in Verbindung setzen. Dies ist eine einmalige Onboarding-Übung für neue Benutzer.
 
 Sobald Sie Ihren NetApp Support Site Account besitzen, können Sie im Portal BlueXP diesen NSS-Account für zukünftige Registrierungen hinzufügen.

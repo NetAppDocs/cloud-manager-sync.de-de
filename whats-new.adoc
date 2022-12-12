@@ -18,6 +18,30 @@ Informieren Sie sich über die Neuigkeiten in Cloud Sync.
 
 
 
+== 11 Dezember 2022
+
+
+
+=== Verzeichnisse nach Namen filtern
+
+Für Synchronisierungsbeziehungen steht jetzt eine neue *Ausschließverzeichnisnamen*-Einstellung zur Verfügung. Benutzer können maximal 15 Verzeichnisnamen aus ihrer Synchronisierung herausfiltern.
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-creating-relationships.html#settings["Erfahren Sie mehr über die Einstellung „Verzeichnisnamen ausschließen“"].
+
+
+
+== Zusätzliche Unterstützung für Amazon S3 und ONTAP S3 Storage
+
+Cloud Sync unterstützt jetzt zusätzliche Synchronisierungsbeziehungen für AWS S3 und ONTAP S3 Storage:
+
+* AWS S3 zu ONTAP S3 Storage
+* ONTAP S3 Storage zu AWS S3
+
+
+https://docs.netapp.com/us-en/cloud-manager-sync/reference-supported-relationships.html["Weitere Informationen zu unterstützten Synchronisierungsbeziehungen"].
+
+
+
 == Oktober 30 2022
 
 

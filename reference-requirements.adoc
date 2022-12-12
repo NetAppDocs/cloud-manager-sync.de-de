@@ -56,7 +56,7 @@ NOTE: Der Daten-Broker ignoriert standardmäßig die folgenden Verzeichnisse: .S
 
 
 
-== Amazon S3 Bucket-Anforderungen
+== [[s3]]Amazon S3-Bucket-Anforderungen
 
 Stellen Sie sicher, dass Ihr Amazon S3-Bucket die folgenden Anforderungen erfüllt
 
@@ -103,7 +103,7 @@ image:screenshot_iam_role_arn.gif["Ein Screenshot der AWS IAM-Konsole mit einem 
 
 
 
-== Azure Blob Storage-Anforderungen
+== [[Blob]]Azure Blob Storage-Anforderungen
 
 Stellen Sie sicher, dass Ihr Azure Blob Storage die folgenden Anforderungen erfüllt.
 
@@ -186,7 +186,7 @@ link:task-managing-data-brokers.html#define-a-unified-configuration-for-a-data-b
 
 
 
-== Anforderungen an Google Cloud Storage Bucket
+== [[google]]Google Cloud Storage Bucket-Anforderungen
 
 Stellen Sie sicher, dass Ihr Google Cloud Storage Bucket die folgenden Anforderungen erfüllt.
 

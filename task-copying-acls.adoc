@@ -17,8 +17,8 @@ summary: 'Cloud Sync kann Zugriffssteuerungslisten (ACLs) zwischen SMB-Freigaben
 Cloud Sync kann Zugriffssteuerungslisten (ACLs) zwischen SMB-Freigaben und zwischen SMB-Freigaben und Objekt-Storage kopieren (außer ONTAP S3). Bei Bedarf haben Sie auch die Möglichkeit, ACLs mithilfe von robocopy manuell zwischen SMB-Freigaben beizubehalten.
 
 .Wahlmöglichkeiten
-*  up Cloud Sync to copy ACLs from an SMB server,Richten Sie Cloud Sync so ein, dass ACLs automatisch kopiert werden
-*  copying ACLs between SMB shares,Kopieren Sie die ACLs manuell zwischen SMB-Freigaben
+* <<Setting up Cloud Sync to copy ACLs from an SMB server,Richten Sie Cloud Sync so ein, dass ACLs automatisch kopiert werden>>
+* <<Manuelles Kopieren von ACLs zwischen SMB-Freigaben,Kopieren Sie die ACLs manuell zwischen SMB-Freigaben>>
 
 
 
@@ -27,6 +27,7 @@ Cloud Sync kann Zugriffssteuerungslisten (ACLs) zwischen SMB-Freigaben und zwisc
 
 Kopieren Sie ACLs zwischen SMB-Freigaben und zwischen SMB-Freigaben und Objekt-Storage. Aktivieren Sie dazu eine Einstellung beim Erstellen einer Beziehung oder nach dem Erstellen einer Beziehung.
 
+.Was Sie benötigen
 Diese Funktion arbeitet mit jedem Datentyp Broker zusammen – AWS, Azure, Google Cloud Platform oder On-Premises-Daten-Broker. Der On-Premises-Daten-Broker kann ausgeführt werden link:task-installing-linux.html["Alle unterstützten Betriebssysteme"].
 
 .Schritte für eine neue Beziehung
@@ -61,6 +62,7 @@ image:screenshot-sync-tags-metadata.png["Ein Screenshot des sechsten Schritts im
 . Klicken Sie Auf *Einstellungen Speichern*.
 
 
+.Ergebnis
 Beim Synchronisieren von Daten behält Cloud Sync die ACLs zwischen Quelle und Ziel bei.
 
 

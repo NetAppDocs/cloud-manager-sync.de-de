@@ -71,6 +71,7 @@ Mit Cloud Sync können Sie Daten von einer Quelle zu einem Ziel synchronisieren.
 * IBM Cloud Objekt-Storage
 * NFS-Server
 * On-Premises-ONTAP-Cluster
+* ONTAP S3 Storage
 * SMB Server
 * StorageGRID
 
@@ -247,6 +248,7 @@ Mit Cloud Sync können Sie Daten von einer Quelle zu einem Ziel synchronisieren.
 
 
 | ONTAP S3 Storage  a| 
+* Amazon S3
 * Google Cloud Storage
 * SMB Server
 * StorageGRID

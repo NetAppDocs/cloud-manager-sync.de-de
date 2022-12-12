@@ -119,7 +119,7 @@ Hilfe finden Sie auf den folgenden Seiten:
 
 
 
-== Den Namen einer Gruppe bearbeiten
+== Bearbeiten Sie den Namen einer Gruppe
 
 Ändern Sie jederzeit den Namen einer Datenmaklergruppe.
 
@@ -132,6 +132,7 @@ image:screenshot_sync_group_edit.gif["Ein Screenshot des Aktionsmenüs, das für
 . Geben Sie einen neuen Namen ein und klicken Sie auf *Speichern*.
 
 
+.Ergebnis
 Cloud Sync aktualisiert den Namen der Gruppe des Daten-Brokers.
 
 
@@ -187,6 +188,7 @@ image:screenshot_sync_group_remove.png["Ein Screenshot des Aktionsmenüs, das f�
 . Klicken Sie Auf *Verschieben*.
 
 
+.Ergebnis
 Cloud Sync verschiebt den Daten-Broker in eine neue oder vorhandene Daten-Broker-Gruppe. Wenn in der vorherigen Gruppe keine anderen Datenmakler vorhanden sind, wird sie von Cloud Sync gelöscht.
 
 
@@ -203,11 +205,12 @@ Aktualisieren Sie die Proxykonfiguration für einen Datenmanager, indem Sie Deta
 . Klicken Sie Auf *Aktualisieren*.
 
 
+.Ergebnis
 Cloud Sync aktualisiert den Datenvermittler, um die Proxy-Konfiguration für den Internetzugang zu verwenden.
 
 
 
-== Zeigen Sie die Konfiguration eines Datenmakers an
+== Zeigen Sie die Konfiguration eines Datenmaklers an
 
 Unter Umständen möchten Sie Details zu einem Datenvermittler anzeigen, um beispielsweise den Hostnamen, die IP-Adresse, die verfügbare CPU und den verfügbaren RAM zu identifizieren.
 
@@ -272,6 +275,7 @@ image:screenshot_sync_group_remove.gif["Ein Screenshot des Aktionsmenüs, das f�
 . Klicken Sie Auf *Data Broker Entfernen*.
 
 
+.Ergebnis
 Cloud Sync entfernt den Daten-Broker aus der Gruppe.
 
 
@@ -291,4 +295,5 @@ image:screenshot_sync_group_add.png["Ein Screenshot des Aktionsmenüs, das für 
 . Geben Sie zur Bestätigung den Namen der Gruppe ein und klicken Sie auf *Gruppe löschen*.
 
 
+.Ergebnis
 Cloud Sync entfernt die Datenmakler und löscht die Gruppe.
