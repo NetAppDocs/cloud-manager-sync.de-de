@@ -24,13 +24,13 @@ Informieren Sie sich über die Neuigkeiten in Cloud Sync.
 
 === Verzeichnisse nach Namen filtern
 
-Für Synchronisierungsbeziehungen steht jetzt eine neue *Ausschließverzeichnisnamen*-Einstellung zur Verfügung. Benutzer können maximal 15 Verzeichnisnamen aus ihrer Synchronisierung herausfiltern.
+Für Synchronisierungsbeziehungen steht jetzt eine neue *Ausschließverzeichnisnamen*-Einstellung zur Verfügung. Benutzer können maximal 15 Verzeichnisnamen aus ihrer Synchronisierung herausfiltern. Die Verzeichnisse .Copy-Offload, .Snapshot, ~Snapshot sind standardmäßig ausgeschlossen.
 
 https://docs.netapp.com/us-en/cloud-manager-sync/task-creating-relationships.html#settings["Erfahren Sie mehr über die Einstellung „Verzeichnisnamen ausschließen“"].
 
 
 
-== Zusätzliche Unterstützung für Amazon S3 und ONTAP S3 Storage
+=== Zusätzliche Unterstützung für Amazon S3 und ONTAP S3 Storage
 
 Cloud Sync unterstützt jetzt zusätzliche Synchronisierungsbeziehungen für AWS S3 und ONTAP S3 Storage:
 

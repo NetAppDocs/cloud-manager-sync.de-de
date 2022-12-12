@@ -1689,7 +1689,6 @@
   <block id="4faa53699bc5575d520ebbbdbdcb3676" category="section-title">[[Lizenzen]]Lizenzen von NetApp erwerben und zu Cloud Sync hinzufügen</block>
   <block id="5912630061434e78e733b8d5e5e3dc88" category="section-title">11 Dezember 2022</block>
   <block id="9709c6ba9ff4b10cb5ec3f4f956d3226" category="section-title">Verzeichnisse nach Namen filtern</block>
-  <block id="7b9790a244d066462a8602bd0a61ba73" category="paragraph">Für Synchronisierungsbeziehungen steht jetzt eine neue *Ausschließverzeichnisnamen*-Einstellung zur Verfügung. Benutzer können maximal 15 Verzeichnisnamen aus ihrer Synchronisierung herausfiltern.</block>
   <block id="84a8ea117dd9c6b8ddbbe8f47665f923" category="inline-link">Erfahren Sie mehr über die Einstellung „Verzeichnisnamen ausschließen“</block>
   <block id="8391e3aac2d2f8dd1b8e38350d072463" category="paragraph"><block ref="018123db357961d73398ef3066f74a1b" category="inline-link-rx"></block>.</block>
   <block id="211e17aac7e6f53a17024d84713e8c34" category="section-title">Zusätzliche Unterstützung für Amazon S3 und ONTAP S3 Storage</block>
@@ -1709,4 +1708,5 @@
   <block id="157e0bfc3909da4f9907f6377e70c5d2" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Bezahlen Sie Ihre Synchronisierungsbeziehungen, nachdem die kostenlose Testversion abgelaufen ist</block>
   <block id="f8fb6587a32dba313e626666cb0364a8" category="list-text">Verzeichnisnamen Ausschließen</block>
   <block id="baf659a0894b31eff8d9e87af59af9e5" category="list-text">Geben Sie maximal 15 Verzeichnisse an, die von der Synchronisierung ausgeschlossen werden sollen, indem Sie ihren Namen eingeben und *Enter* drücken. Die Verzeichnisse .Copy-Offload, .Snapshot, ~Snapshot sind standardmäßig ausgeschlossen. Wenn Sie diese in Ihre Synchronisierung aufnehmen möchten, kontaktieren Sie uns.</block>
+  <block id="43b44f78e255d05aac846a6181095cd6" category="paragraph">Für Synchronisierungsbeziehungen steht jetzt eine neue *Ausschließverzeichnisnamen*-Einstellung zur Verfügung. Benutzer können maximal 15 Verzeichnisnamen aus ihrer Synchronisierung herausfiltern. Die Verzeichnisse .Copy-Offload, .Snapshot, ~Snapshot sind standardmäßig ausgeschlossen.</block>
 </blocks>
