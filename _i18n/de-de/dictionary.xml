@@ -1709,4 +1709,5 @@
   <block id="f8fb6587a32dba313e626666cb0364a8" category="list-text">Verzeichnisnamen Ausschließen</block>
   <block id="baf659a0894b31eff8d9e87af59af9e5" category="list-text">Geben Sie maximal 15 Verzeichnisse an, die von der Synchronisierung ausgeschlossen werden sollen, indem Sie ihren Namen eingeben und *Enter* drücken. Die Verzeichnisse .Copy-Offload, .Snapshot, ~Snapshot sind standardmäßig ausgeschlossen. Wenn Sie diese in Ihre Synchronisierung aufnehmen möchten, kontaktieren Sie uns.</block>
   <block id="43b44f78e255d05aac846a6181095cd6" category="paragraph">Für Synchronisierungsbeziehungen steht jetzt eine neue *Ausschließverzeichnisnamen*-Einstellung zur Verfügung. Benutzer können maximal 15 Verzeichnisnamen aus ihrer Synchronisierung herausfiltern. Die Verzeichnisse .Copy-Offload, .Snapshot, ~Snapshot sind standardmäßig ausgeschlossen.</block>
+  <block id="109c4a4872ddbe9910e974f2b3dd0211" category="admonition">Wenn du ein persönliches E-Mail-Konto ohne Kunden-ID verwendest, kannst du die Standard-Client-ID „QC3AgHk6qdbmC7Yr82ApBwaaJLwRrNO“ verwenden.</block>
 </blocks>

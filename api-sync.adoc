@@ -39,6 +39,11 @@ Body:
               "password": "<user_password>"
 }
 ----
+
+
+
+NOTE: Wenn du ein persönliches E-Mail-Konto ohne Kunden-ID verwendest, kannst du die Standard-Client-ID „QC3AgHk6qdbmC7Yr82ApBwaaJLwRrNO“ verwenden.
+
 . Holen Sie sich Ihre BlueXp Konto-ID.
 +
 [source, http]
