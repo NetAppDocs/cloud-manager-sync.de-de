@@ -18,6 +18,28 @@ Informieren Sie sich über die Neuigkeiten in Cloud Sync.
 
 
 
+== 3. Januar 2023
+
+
+
+=== Zeigt die lokale Konfiguration des Datenmaklers auf der UI an
+
+Es gibt jetzt eine Option *Konfiguration anzeigen*, mit der Benutzer die lokale Konfiguration jedes Datenmakers auf der Benutzeroberfläche anzeigen können.
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-data-brokers.html["Erfahren Sie mehr über das Managen von Maklergruppen"].
+
+
+
+=== Führen Sie ein Upgrade auf Azure und Google Cloud als Datenvermittler durch
+
+Das Betriebssystem für Datenmakler in Azure und Google Cloud wurde auf die Rocky Linux 9.0 aktualisiert.
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-installing-azure.html#details-about-the-data-broker-vm["Erfahren Sie mehr über die Instanz für Datenmanager in Azure"].
+
+https://docs.netapp.com/us-en/cloud-manager-sync/task-installing-gcp.html#details-about-the-data-broker-vm-instance["Erfahren Sie mehr über die Instanz für Datenmakler in Google Cloud"].
+
+
+
 == 11 Dezember 2022
 
 

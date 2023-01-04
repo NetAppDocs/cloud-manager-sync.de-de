@@ -208,6 +208,6 @@ Cloud Sync erstellt mithilfe der folgenden Konfiguration einen Daten-Broker in A
 VM-Typ:: Standard DS4 v2
 VCPUs:: 8
 RAM:: 28 GB
-Betriebssystem:: CentOS 7.7
+Betriebssystem:: Rocky Linux 9.0
 Festplattengröße und -Typ:: 64 GB Premium-SSD
 

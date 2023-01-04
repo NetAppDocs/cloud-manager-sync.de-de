@@ -166,6 +166,6 @@ Cloud Sync erstellt mithilfe der folgenden Konfiguration einen Daten-Broker in G
 Maschinentyp:: n2-Standard-4
 VCPUs:: 4
 RAM:: 15 GB
-Betriebssystem:: Red Hat Enterprise Linux 7.7
+Betriebssystem:: Rocky Linux 9.0
 Festplattengröße und -Typ:: 20-GB-HDD pd-Standard
 
